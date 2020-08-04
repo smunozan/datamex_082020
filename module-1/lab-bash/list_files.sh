@@ -1,0 +1,3 @@
+#python
+#!/bin/bash
+ls
