@@ -1,0 +1,21 @@
+* imprimir en bash: echo "Hello World"
+* crear directorio: mkdir new_dir
+* borrar directorio: rmdir new_dir/
+* cp lorem/sed.txt lorem-copy/sed.txt
+* cp lorem/at.txt lorem-copy/at.txt | cp lorem/lorem.txt lorem-copy/lorem.txt
+* Abrir archivo para lectura: cat lorem/sed.txt
+* Abrir archivo para lectura: cat lorem/at.txt
+* Abrir archivo para lectura: cat lorem/lorem.txt
+* Imprimir primeras 3 lineas: head -3 lorem-copy/sed.txt
+* Imprimir últimas 3 lineas: tail -3 lorem-copy/sed.txt
+* Editar archivo: nano lorem-copy/sed.txt
+* Imprimir últimas 3 lineas: tail -3 lorem-copy/sed.txt
+* Reemplazar et por ET: sed "s/et/ET/g" lorem-copy/at.txt
+* Usuario activo: whoami 
+* Sistema de archivos: DF -Th
+* Listar archivos con extension .txt en una carpeta: ls *.txt
+* Número de lineas en un archivo: cat lorem/sed.txt | wc -l lorem/sed.txt
+* Número de archivos que empiezan con lorem: find . -iname "lorem" -type f | wc -l (incorrecto)
+* Mostrar las apariciones de et en archivo: grep -o -i et lorem/at.txt
+* Contar palabras et en archivo: grep -o -i et lorem/at.txt | wc -l
+* Contar palabras et en todos los documentos de un directorio: cat * | grep -c et
