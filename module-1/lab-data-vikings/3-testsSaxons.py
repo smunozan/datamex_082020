@@ -2,7 +2,7 @@ import unittest
 from vikingsClases import Saxon
 from inspect import signature
 
-
+print("prueba")
 class TestSaxon(unittest.TestCase):
 
     @classmethod
