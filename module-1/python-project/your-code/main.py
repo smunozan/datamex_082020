@@ -80,20 +80,23 @@ class Enemigos(pygame.sprite.Group):
     def __init__(self,  cantidadVirus):
         pygame.sprite.Group.__init__(self)
         #llamamos a clase Ladrillo para crear los ladrillos del muro en la posición x, y
-        pos_x = ANCHO 
+        pos_x = ANCHO+20 
         pos_y = ALTO*.80
         for i in range(cantidadVirus):
             virus = Virus((pos_x,pos_y))
             #agregamos el virus creado a la colección de virus
             self.add(virus)
             #modificamos la posición en x con una posición random
-            pos_x += random.randint(200,800)
+            pos_x += random.randint(250,800)
 
 #función que se ejecuta cuando pierdes (muestra textos)
 def juego_terminado():
     #determinamos el texto que se va a ver
     fuente = pygame.font.SysFont("Consolas",60)
-    texto = fuente.render("GAME OVER", True, color_negro)
+    if nueva_puntuacion == True:
+        texto = fuente.render("NEW RECORD: "+str(round(puntuacion_mas_alta)), True, color_negro)
+    else:
+        texto = fuente.render("GAME OVER", True, color_negro)
     texto_rect = texto.get_rect()
     texto_rect.center = [ANCHO/2,ALTO*.4]
     #llamamos el texto a mostrarse en pantalla
@@ -184,6 +187,7 @@ while True:
 
     #Choque entre los objetos
     if pygame.sprite.spritecollide(jugador,enemigos,False):
+        nueva_puntuacion = False
         inicio_juego = False
         game_over = True
         jugador_jugo = False
@@ -191,6 +195,7 @@ while True:
         enemigos = Enemigos(100)
         if puntuacion_mas_alta < puntuacion:
             puntuacion_mas_alta = puntuacion
+            nueva_puntuacion = True
         puntuacion = 0
 
     #Empezo el juego cuando usuario da tecla SPACE
@@ -221,7 +226,7 @@ while True:
     #Mostramos texto de puntuación
     mostrar_puntuacion_mas_alta()
 
-    #Dibujar objeto ironhack del jugador en pantalla
+    #Dibujar objeto fondo en pantalla
     pantalla.blit(fondo2.image, fondo2.rect)
     pantalla.blit(fondo.image, fondo.rect)
 
