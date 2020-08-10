@@ -1,4 +1,4 @@
-![Project Logo](\your-code\imagenes\title.png)
+![Project Logo](title.png)
 
 # Project: Ironhack vs Virus Python Game
 
@@ -13,7 +13,7 @@ This game was build using the Pygame library with functions, lists, if statement
 
 ### Game Map
 
-![Game Map](\your-code\imagenes\example.png)
+![Game Map](example.png)
 
 ### Game Narratives
 
