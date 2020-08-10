@@ -82,12 +82,37 @@ class Enemigos(pygame.sprite.Group):
         #llamamos a clase Ladrillo para crear los ladrillos del muro en la posición x, y
         pos_x = ANCHO+20 
         pos_y = ALTO*.80
-        for i in range(cantidadVirus):
+        #Nivel 1 (más espacio entre virus)
+        for i in range(round(cantidadVirus/5)):
             virus = Virus((pos_x,pos_y))
             #agregamos el virus creado a la colección de virus
             self.add(virus)
             #modificamos la posición en x con una posición random
             pos_x += random.randint(250,800)
+        for i in range(round(cantidadVirus/5)):
+            virus = Virus((pos_x,pos_y))
+            #agregamos el virus creado a la colección de virus
+            self.add(virus)
+            #modificamos la posición en x con una posición random
+            pos_x += random.randint(250,700)
+        for i in range(round(cantidadVirus/5)):
+            virus = Virus((pos_x,pos_y))
+            #agregamos el virus creado a la colección de virus
+            self.add(virus)
+            #modificamos la posición en x con una posición random
+            pos_x += random.randint(200,600)
+        for i in range(round(cantidadVirus/5)):
+            virus = Virus((pos_x,pos_y))
+            #agregamos el virus creado a la colección de virus
+            self.add(virus)
+            #modificamos la posición en x con una posición random
+            pos_x += random.randint(200,500)
+        for i in range(round(cantidadVirus/5)):
+            virus = Virus((pos_x,pos_y))
+            #agregamos el virus creado a la colección de virus
+            self.add(virus)
+            #modificamos la posición en x con una posición random
+            pos_x += random.randint(150,400)
 
 #función que se ejecuta cuando pierdes (muestra textos)
 def juego_terminado():
@@ -120,7 +145,7 @@ def mostrar_puntuacion():
     cadena = str(round(puntuacion)).zfill(5)
     texto = fuente.render(cadena, True, color_negro)
     texto_rect = texto.get_rect()
-    texto_rect.center = [ANCHO*.90,10]
+    texto_rect.center = [ANCHO*.90,15]
     #llamamos el texto a mostrarse en pantalla
     pantalla.blit(texto,texto_rect)
 
@@ -131,7 +156,7 @@ def mostrar_puntuacion_mas_alta():
     cadena = "HI "+str(round(puntuacion_mas_alta)).zfill(5)
     texto = fuente.render(cadena, True, color_negro)
     texto_rect = texto.get_rect()
-    texto_rect.center = [ANCHO*.75,10]
+    texto_rect.center = [ANCHO*.75,15]
     #llamamos el texto a mostrarse en pantalla
     pantalla.blit(texto,texto_rect)
 
@@ -139,7 +164,7 @@ def mostrar_puntuacion_mas_alta():
 pantalla = pygame.display.set_mode((ANCHO,ALTO))
 
 #Configurar titulo de la pantalla
-pygame.display.set_caption("Ironhack Virus")
+pygame.display.set_caption("Ironhack vs Virus")
 
 #crear reloj para definir tiempos de procesamiento
 reloj = pygame.time.Clock()
