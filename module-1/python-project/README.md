@@ -18,7 +18,7 @@ As far as you go, it will get more difficult.
 
 Good luck!
 
-### Game Map
+### Game Image
 
 ![Game Map](example.PNG)
 
