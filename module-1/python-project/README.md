@@ -1,4 +1,4 @@
-![Project Logo](title.png)
+![Project Logo](ironhackVSvirus.png)
 
 # Project: Ironhack vs Virus Python Game
 
@@ -7,6 +7,7 @@
 The goal of this project is to apply the Python programming skills I had learned during the first week of Ironhack Data Analytics Bootcamp.
 
 This game was build using the Pygame library with functions, lists, if statements, loops (for and while), variables, classes, and more.
+
 ---
 
 ## Game Design
