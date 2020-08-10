@@ -13,7 +13,7 @@ This game was build using the Pygame library with functions, lists, if statement
 
 ### Game Map
 
-![Game Map](example.png)
+![Game Map](example.PNG)
 
 ### Game Narratives
 
