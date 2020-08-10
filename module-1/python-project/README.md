@@ -11,19 +11,19 @@ This game was build using the Pygame library with functions, lists, if statement
 
 ## Game Design
 
+In this game, you have to jump the viruses that are coming, you can use the space key to jump.
+
+As far as you go, it will get more difficult.
+
+Good luck!
+
 ### Game Map
 
 ![Game Map](example.PNG)
 
-### Game Narratives
-
-In this game, you have to jump the viruses that are coming, you can use the space key to jump. As far as you go, it will get more difficult.
-
 ---
 
-## Suggested Ways to Get Started
-
-How to play?
+## HOW TO PLAY?
 
 1. Install Python (https://www.python.org/downloads/) and Pygame (https://www.pygame.org/wiki/GettingStarted) in your computer 
 
