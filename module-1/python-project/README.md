@@ -30,7 +30,7 @@ Good luck!
 
 2. Download this folder (PYTHON-PROJECT)
 
-3. In your terminal, go to "your-code" folder inside the "PYTHON-PROJECT" folder (the one that we just downloaded before)
+3. In your terminal, go to "Code" folder inside the "PYTHON-PROJECT" folder (the one that we just downloaded before)
 
 4. Launch the command "python main.py"
 
