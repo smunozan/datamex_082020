@@ -45,3 +45,13 @@ The following deliverables should be pushed to your Github repo for this chapter
 * [StackOverflow Pandas Questions](https://stackoverflow.com/questions/tagged/pandas)
 * [Awesome Public Data Sets](https://github.com/awesomedata/awesome-public-datasets)
 * [Kaggle Data Sets](https://www.kaggle.com/datasets)
+
+
+Los tiburones que más han a atacado son XXXXX y se encuentran principalmente en XXXXXX.
+Las principales actividades que han tenido ataques de tiburones son XXXXXX
+Los paises con más ataques son XXXXXX
+La edad con más ataques es XXXX seguida de XXXX y XXXX
+El género con más ataques es XXXX. Por cada XXXX atacado, hay un XXXX atacado.
+Los daños más comunes son XXXX
+La forma de tener más probabilidad de que te ataquen es si eres XXXX, tienes XXXX años, vives en XXXX, haces XXXX entre XXXX hora
+La hora con mayor cantidad de ataques es durante XXXXX
