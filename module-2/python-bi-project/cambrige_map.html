@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2778219dd5b843b3949bc4561fdc38c1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_2778219dd5b843b3949bc4561fdc38c1" ></div>
+        
+</body>
+<script>    
+    
+            var map_2778219dd5b843b3949bc4561fdc38c1 = L.map(
+                "map_2778219dd5b843b3949bc4561fdc38c1",
+                {
+                    center: [42.38, -71.12],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e89133fe9a4d43f59de75d438a771ebc = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var marker_15d79fd2c3f447528ba035249cb93242 = L.marker(
+                [42.3655601, -71.1034958],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_71aefff1f58e452f9db8f4fa04e25270 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_15d79fd2c3f447528ba035249cb93242.setIcon(icon_71aefff1f58e452f9db8f4fa04e25270);
+        
+    
+        var popup_d481ddbba77945a78bb238f46bd21289 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d1bc4064eea246d38ed6ac67bf4b8720 = $(`<div id="html_d1bc4064eea246d38ed6ac67bf4b8720" style="width: 100.0%; height: 100.0%;">wework.com</div>`)[0];
+            popup_d481ddbba77945a78bb238f46bd21289.setContent(html_d1bc4064eea246d38ed6ac67bf4b8720);
+        
+
+        marker_15d79fd2c3f447528ba035249cb93242.bindPopup(popup_d481ddbba77945a78bb238f46bd21289)
+        ;
+
+        
+    
+    
+            marker_15d79fd2c3f447528ba035249cb93242.bindTooltip(
+                `<div>
+                     WeWork 625 Massachusetts Ave
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2381a226c9884694abc1d951b9d3eecd = L.marker(
+                [42.3735334, -71.0934919],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_7b368e90d98e423e8631c24462d04e31 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_2381a226c9884694abc1d951b9d3eecd.setIcon(icon_7b368e90d98e423e8631c24462d04e31);
+        
+    
+        var popup_30ba69d1c2e24d06862c5156302fb5ff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a3cd7077ffa64c4b83e97e415165f626 = $(`<div id="html_a3cd7077ffa64c4b83e97e415165f626" style="width: 100.0%; height: 100.0%;">geekoffices.com</div>`)[0];
+            popup_30ba69d1c2e24d06862c5156302fb5ff.setContent(html_a3cd7077ffa64c4b83e97e415165f626);
+        
+
+        marker_2381a226c9884694abc1d951b9d3eecd.bindPopup(popup_30ba69d1c2e24d06862c5156302fb5ff)
+        ;
+
+        
+    
+    
+            marker_2381a226c9884694abc1d951b9d3eecd.bindTooltip(
+                `<div>
+                     Geek Offices
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4f4309ab03a34a30b1d1bb785529c9b2 = L.marker(
+                [42.3663049, -71.1034069],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_06d6d95bc94e41c6a7c994e1bc3fb648 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_4f4309ab03a34a30b1d1bb785529c9b2.setIcon(icon_06d6d95bc94e41c6a7c994e1bc3fb648);
+        
+    
+        var popup_be4ec618b9044d24b5f43f85ac5a0160 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_646664c2ddd74110bd753d4452905a4c = $(`<div id="html_646664c2ddd74110bd753d4452905a4c" style="width: 100.0%; height: 100.0%;">workbar.com</div>`)[0];
+            popup_be4ec618b9044d24b5f43f85ac5a0160.setContent(html_646664c2ddd74110bd753d4452905a4c);
+        
+
+        marker_4f4309ab03a34a30b1d1bb785529c9b2.bindPopup(popup_be4ec618b9044d24b5f43f85ac5a0160)
+        ;
+
+        
+    
+    
+            marker_4f4309ab03a34a30b1d1bb785529c9b2.bindTooltip(
+                `<div>
+                     Workbar - Central Square
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9108d3dfcbf4ecc8899dcbecf69c8a8 = L.marker(
+                [42.3661484, -71.093324],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_6afa65e6f1a24cc880aee229c0759dbe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a9108d3dfcbf4ecc8899dcbecf69c8a8.setIcon(icon_6afa65e6f1a24cc880aee229c0759dbe);
+        
+    
+        var popup_b317d6aa5c844e0b911b047f541aed8b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_58f953bea00b441b8e320f61e2b380ad = $(`<div id="html_58f953bea00b441b8e320f61e2b380ad" style="width: 100.0%; height: 100.0%;">nginworkplace.com</div>`)[0];
+            popup_b317d6aa5c844e0b911b047f541aed8b.setContent(html_58f953bea00b441b8e320f61e2b380ad);
+        
+
+        marker_a9108d3dfcbf4ecc8899dcbecf69c8a8.bindPopup(popup_b317d6aa5c844e0b911b047f541aed8b)
+        ;
+
+        
+    
+    
+            marker_a9108d3dfcbf4ecc8899dcbecf69c8a8.bindTooltip(
+                `<div>
+                     NGIN Workplace
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8fabe5efeb7049babcf8dbea56c2cee9 = L.marker(
+                [42.362848, -71.083506],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_7642ab6647404c79a0c90a9c3547fea8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_8fabe5efeb7049babcf8dbea56c2cee9.setIcon(icon_7642ab6647404c79a0c90a9c3547fea8);
+        
+    
+        var popup_dacefd53d3414cdeae499e30390c89bb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e8cb692c07ab40eca858e4b29b057b5c = $(`<div id="html_e8cb692c07ab40eca858e4b29b057b5c" style="width: 100.0%; height: 100.0%;">No link registered</div>`)[0];
+            popup_dacefd53d3414cdeae499e30390c89bb.setContent(html_e8cb692c07ab40eca858e4b29b057b5c);
+        
+
+        marker_8fabe5efeb7049babcf8dbea56c2cee9.bindPopup(popup_dacefd53d3414cdeae499e30390c89bb)
+        ;
+
+        
+    
+    
+            marker_8fabe5efeb7049babcf8dbea56c2cee9.bindTooltip(
+                `<div>
+                     C3 (CIC Cambridge Coworking)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92ff7136dacf4ffd95d9970923b5fcb3 = L.marker(
+                [42.3717526, -71.0866438],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_9a78f46b19de4913aeaebce3c3b8859c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_92ff7136dacf4ffd95d9970923b5fcb3.setIcon(icon_9a78f46b19de4913aeaebce3c3b8859c);
+        
+    
+        var popup_18ba576dda8f44158cde216249a62f4c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3e236b25fa4e4d89b64474a34e8911b7 = $(`<div id="html_3e236b25fa4e4d89b64474a34e8911b7" style="width: 100.0%; height: 100.0%;">rent24.com</div>`)[0];
+            popup_18ba576dda8f44158cde216249a62f4c.setContent(html_3e236b25fa4e4d89b64474a34e8911b7);
+        
+
+        marker_92ff7136dacf4ffd95d9970923b5fcb3.bindPopup(popup_18ba576dda8f44158cde216249a62f4c)
+        ;
+
+        
+    
+    
+            marker_92ff7136dacf4ffd95d9970923b5fcb3.bindTooltip(
+                `<div>
+                     rent24 Coworking Cambridge
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b77fe1cf2bc34be390a164b4606d9c4a = L.marker(
+                [42.3689745, -71.1108994],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_a51219f5970a4abda1f327837d1cebba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b77fe1cf2bc34be390a164b4606d9c4a.setIcon(icon_a51219f5970a4abda1f327837d1cebba);
+        
+    
+        var popup_03de5e8b7540403dbd5825bf0ddfce1e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3ee94780446c4763b5d75ba9d07db24d = $(`<div id="html_3ee94780446c4763b5d75ba9d07db24d" style="width: 100.0%; height: 100.0%;">zpark.space</div>`)[0];
+            popup_03de5e8b7540403dbd5825bf0ddfce1e.setContent(html_3ee94780446c4763b5d75ba9d07db24d);
+        
+
+        marker_b77fe1cf2bc34be390a164b4606d9c4a.bindPopup(popup_03de5e8b7540403dbd5825bf0ddfce1e)
+        ;
+
+        
+    
+    
+            marker_b77fe1cf2bc34be390a164b4606d9c4a.bindTooltip(
+                `<div>
+                     Z-Park | ZGC Innovation Center Boston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_74170aaa5351457cac0f5231f10ad21b = L.marker(
+                [42.3644861, -71.0834156],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_0794a4811b244656aaa4077300f33f47 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_74170aaa5351457cac0f5231f10ad21b.setIcon(icon_0794a4811b244656aaa4077300f33f47);
+        
+    
+        var popup_ac2c5c7790754aa18aca9b890e5f1210 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_46cb5212492a4a95ac2564a08ac329e6 = $(`<div id="html_46cb5212492a4a95ac2564a08ac329e6" style="width: 100.0%; height: 100.0%;">9W78+QJ Cambridge, Massachusetts, Estados Unidos</div>`)[0];
+            popup_ac2c5c7790754aa18aca9b890e5f1210.setContent(html_46cb5212492a4a95ac2564a08ac329e6);
+        
+
+        marker_74170aaa5351457cac0f5231f10ad21b.bindPopup(popup_ac2c5c7790754aa18aca9b890e5f1210)
+        ;
+
+        
+    
+    
+            marker_74170aaa5351457cac0f5231f10ad21b.bindTooltip(
+                `<div>
+                     cove
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a6fa63a29fe7433982b822c198532559 = L.marker(
+                [42.371202, -71.097105],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_cf191f08728f47a495756f38b9b72651 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a6fa63a29fe7433982b822c198532559.setIcon(icon_cf191f08728f47a495756f38b9b72651);
+        
+    
+        var popup_34c9919ad0f14be295f3a088bf5f9b54 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7772a9ac8d3144db9406a2963e491898 = $(`<div id="html_7772a9ac8d3144db9406a2963e491898" style="width: 100.0%; height: 100.0%;">+1 617-714-4157</div>`)[0];
+            popup_34c9919ad0f14be295f3a088bf5f9b54.setContent(html_7772a9ac8d3144db9406a2963e491898);
+        
+
+        marker_a6fa63a29fe7433982b822c198532559.bindPopup(popup_34c9919ad0f14be295f3a088bf5f9b54)
+        ;
+
+        
+    
+    
+            marker_a6fa63a29fe7433982b822c198532559.bindTooltip(
+                `<div>
+                     Industry Lab
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ec6ca4e007eb4b39844ba71b641dab04 = L.marker(
+                [42.3837454, -71.1334791],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_130bbd480ca0412bb831ff17fd89faa8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ec6ca4e007eb4b39844ba71b641dab04.setIcon(icon_130bbd480ca0412bb831ff17fd89faa8);
+        
+    
+        var popup_6dc95a08056a4c488ca08238e24bd3ba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eabd5883186648c59b462c7e5c284975 = $(`<div id="html_eabd5883186648c59b462c7e5c284975" style="width: 100.0%; height: 100.0%;">builtworks.io</div>`)[0];
+            popup_6dc95a08056a4c488ca08238e24bd3ba.setContent(html_eabd5883186648c59b462c7e5c284975);
+        
+
+        marker_ec6ca4e007eb4b39844ba71b641dab04.bindPopup(popup_6dc95a08056a4c488ca08238e24bd3ba)
+        ;
+
+        
+    
+    
+            marker_ec6ca4e007eb4b39844ba71b641dab04.bindTooltip(
+                `<div>
+                     Built
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76798801029c46cbb4bcd9d806604a0a = L.marker(
+                [42.3459092, -71.0709013],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_3a6146e58290429a85071a3293ff6d75 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_76798801029c46cbb4bcd9d806604a0a.setIcon(icon_3a6146e58290429a85071a3293ff6d75);
+        
+    
+        var popup_c4a0f02b1d3f4ee5938205e7b39709a8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1fbcaf89f8624ce3a5fdc881c6ed5f43 = $(`<div id="html_1fbcaf89f8624ce3a5fdc881c6ed5f43" style="width: 100.0%; height: 100.0%;">therevolutionhotel.com</div>`)[0];
+            popup_c4a0f02b1d3f4ee5938205e7b39709a8.setContent(html_1fbcaf89f8624ce3a5fdc881c6ed5f43);
+        
+
+        marker_76798801029c46cbb4bcd9d806604a0a.bindPopup(popup_c4a0f02b1d3f4ee5938205e7b39709a8)
+        ;
+
+        
+    
+    
+            marker_76798801029c46cbb4bcd9d806604a0a.bindTooltip(
+                `<div>
+                     Conspire Coworking Space
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_04e59bef65e449a58b049d5732dcd2a5 = L.marker(
+                [42.3725151, -71.1125884],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_4614b5568bd94e43a254eaa22f54d74d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_04e59bef65e449a58b049d5732dcd2a5.setIcon(icon_4614b5568bd94e43a254eaa22f54d74d);
+        
+    
+        var popup_f1e10dbfcd6c42e899ec708d8f0da959 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8d171f07175e457aa82364adb3417485 = $(`<div id="html_8d171f07175e457aa82364adb3417485" style="width: 100.0%; height: 100.0%;">9VFP+2X Cambridge, Massachusetts, Estados Unidos</div>`)[0];
+            popup_f1e10dbfcd6c42e899ec708d8f0da959.setContent(html_8d171f07175e457aa82364adb3417485);
+        
+
+        marker_04e59bef65e449a58b049d5732dcd2a5.bindPopup(popup_f1e10dbfcd6c42e899ec708d8f0da959)
+        ;
+
+        
+    
+    
+            marker_04e59bef65e449a58b049d5732dcd2a5.bindTooltip(
+                `<div>
+                     Alley Powered By Verizon
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0e3fac6dd99a4e98a9e363120008dcf2 = L.marker(
+                [42.3626831, -71.0853523],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_d0fff8f7a9c342fcbb5e6d84242224cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_0e3fac6dd99a4e98a9e363120008dcf2.setIcon(icon_d0fff8f7a9c342fcbb5e6d84242224cb);
+        
+    
+        var popup_00e12a33dcff4c16aa5e478bf3838cc3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c77fe659f6e64ca6912f6d217044c57f = $(`<div id="html_c77fe659f6e64ca6912f6d217044c57f" style="width: 100.0%; height: 100.0%;">link-kendall.org</div>`)[0];
+            popup_00e12a33dcff4c16aa5e478bf3838cc3.setContent(html_c77fe659f6e64ca6912f6d217044c57f);
+        
+
+        marker_0e3fac6dd99a4e98a9e363120008dcf2.bindPopup(popup_00e12a33dcff4c16aa5e478bf3838cc3)
+        ;
+
+        
+    
+    
+            marker_0e3fac6dd99a4e98a9e363120008dcf2.bindTooltip(
+                `<div>
+                     The Link
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad93e9812bf44efe97d64717cc499947 = L.marker(
+                [42.3511088, -71.061025],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_75152b1448cb46baa51f9839288a3c05 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ad93e9812bf44efe97d64717cc499947.setIcon(icon_75152b1448cb46baa51f9839288a3c05);
+        
+    
+        var popup_51e9aed7ecfa41ef90209f240a52057a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2774a1090e7a4b1895e0a43f6bf3230c = $(`<div id="html_2774a1090e7a4b1895e0a43f6bf3230c" style="width: 100.0%; height: 100.0%;">courtyardspace.com</div>`)[0];
+            popup_51e9aed7ecfa41ef90209f240a52057a.setContent(html_2774a1090e7a4b1895e0a43f6bf3230c);
+        
+
+        marker_ad93e9812bf44efe97d64717cc499947.bindPopup(popup_51e9aed7ecfa41ef90209f240a52057a)
+        ;
+
+        
+    
+    
+            marker_ad93e9812bf44efe97d64717cc499947.bindTooltip(
+                `<div>
+                     Courtyard Coworking Boston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0c4f19b4988a4c408f429be5084e6ea9 = L.marker(
+                [42.3494669, -71.0754488],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_20f396e5923c4c919673a1c1a8508be2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_0c4f19b4988a4c408f429be5084e6ea9.setIcon(icon_20f396e5923c4c919673a1c1a8508be2);
+        
+    
+        var popup_77604eaa208f4d539c456ed3a2e7a11d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_645cff45b28a4e6690135f4bd14273a3 = $(`<div id="html_645cff45b28a4e6690135f4bd14273a3" style="width: 100.0%; height: 100.0%;">+1 857-323-6988</div>`)[0];
+            popup_77604eaa208f4d539c456ed3a2e7a11d.setContent(html_645cff45b28a4e6690135f4bd14273a3);
+        
+
+        marker_0c4f19b4988a4c408f429be5084e6ea9.bindPopup(popup_77604eaa208f4d539c456ed3a2e7a11d)
+        ;
+
+        
+    
+    
+            marker_0c4f19b4988a4c408f429be5084e6ea9.bindTooltip(
+                `<div>
+                     The Yard - Back Bay Coworking Office Space Boston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e6ec136a7444427fbbc8dd4bb58218ce = L.marker(
+                [42.357004, -71.057619],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_9d36c65d1f6c4883ab9ef8fefc4f10f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e6ec136a7444427fbbc8dd4bb58218ce.setIcon(icon_9d36c65d1f6c4883ab9ef8fefc4f10f5);
+        
+    
+        var popup_f6d7ee5a7a1d456a82706ae8e0eaa6e0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1e514de4869e46b6938022f7f319e813 = $(`<div id="html_1e514de4869e46b6938022f7f319e813" style="width: 100.0%; height: 100.0%;">cic.com</div>`)[0];
+            popup_f6d7ee5a7a1d456a82706ae8e0eaa6e0.setContent(html_1e514de4869e46b6938022f7f319e813);
+        
+
+        marker_e6ec136a7444427fbbc8dd4bb58218ce.bindPopup(popup_f6d7ee5a7a1d456a82706ae8e0eaa6e0)
+        ;
+
+        
+    
+    
+            marker_e6ec136a7444427fbbc8dd4bb58218ce.bindTooltip(
+                `<div>
+                     CIC Boston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b9fecbba3ba94cae8bd67e74a6a6b445 = L.marker(
+                [42.341569, -71.08101],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_a8862d5c199049478c4dc756c48e817f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b9fecbba3ba94cae8bd67e74a6a6b445.setIcon(icon_a8862d5c199049478c4dc756c48e817f);
+        
+    
+        var popup_18e1ac8debd44a3ab27fb04b34a57f1e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d31c7aa00d604bf8ae718329cb03529e = $(`<div id="html_d31c7aa00d604bf8ae718329cb03529e" style="width: 100.0%; height: 100.0%;">+1 617-652-0549</div>`)[0];
+            popup_18e1ac8debd44a3ab27fb04b34a57f1e.setContent(html_d31c7aa00d604bf8ae718329cb03529e);
+        
+
+        marker_b9fecbba3ba94cae8bd67e74a6a6b445.bindPopup(popup_18e1ac8debd44a3ab27fb04b34a57f1e)
+        ;
+
+        
+    
+    
+            marker_b9fecbba3ba94cae8bd67e74a6a6b445.bindTooltip(
+                `<div>
+                     Make Shift Boston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_87f3386d4f184a03a8333c83db7f1469 = L.marker(
+                [42.3521277, -71.0726536],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_9cfbe1c1fffc431b9c66a6a72d9d8968 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_87f3386d4f184a03a8333c83db7f1469.setIcon(icon_9cfbe1c1fffc431b9c66a6a72d9d8968);
+        
+    
+        var popup_ffdb3609e9a9446088702b5e9968fd31 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_26ca5112422a4ccbb95111849aaa5c4e = $(`<div id="html_26ca5112422a4ccbb95111849aaa5c4e" style="width: 100.0%; height: 100.0%;">myoficio.com</div>`)[0];
+            popup_ffdb3609e9a9446088702b5e9968fd31.setContent(html_26ca5112422a4ccbb95111849aaa5c4e);
+        
+
+        marker_87f3386d4f184a03a8333c83db7f1469.bindPopup(popup_ffdb3609e9a9446088702b5e9968fd31)
+        ;
+
+        
+    
+    
+            marker_87f3386d4f184a03a8333c83db7f1469.bindTooltip(
+                `<div>
+                     Oficio Coworking & Meeting Rooms
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ea1ebef613ca4543a9791fed5369c138 = L.marker(
+                [42.3488605, -71.0829719],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_e815ba3fceec4c80a0df6b103a710926 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "desktop", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ea1ebef613ca4543a9791fed5369c138.setIcon(icon_e815ba3fceec4c80a0df6b103a710926);
+        
+    
+        var popup_3779202a2ae24b4f87a322e268d38d1a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_761d2b66c6d644b6b776ce7b9bfa111a = $(`<div id="html_761d2b66c6d644b6b776ce7b9bfa111a" style="width: 100.0%; height: 100.0%;">industriousoffice.com</div>`)[0];
+            popup_3779202a2ae24b4f87a322e268d38d1a.setContent(html_761d2b66c6d644b6b776ce7b9bfa111a);
+        
+
+        marker_ea1ebef613ca4543a9791fed5369c138.bindPopup(popup_3779202a2ae24b4f87a322e268d38d1a)
+        ;
+
+        
+    
+    
+            marker_ea1ebef613ca4543a9791fed5369c138.bindTooltip(
+                `<div>
+                     Industrious Boston Back Bay
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c5b788bc33641c6a40a10823f00731b = L.marker(
+                [42.3652745, -71.1035867],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_c33f7ac1d36943b9a5bee1159a952c88 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8c5b788bc33641c6a40a10823f00731b.setIcon(icon_c33f7ac1d36943b9a5bee1159a952c88);
+        
+    
+            marker_8c5b788bc33641c6a40a10823f00731b.bindTooltip(
+                `<div>
+                     Central
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8d5f14fd3a25451bb112366fd7649e0e = L.marker(
+                [42.3956825, -71.1419135],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_e7c800a223464da291c22931234ac254 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8d5f14fd3a25451bb112366fd7649e0e.setIcon(icon_e7c800a223464da291c22931234ac254);
+        
+    
+            marker_8d5f14fd3a25451bb112366fd7649e0e.bindTooltip(
+                `<div>
+                     Alewife
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca215c1383154d8096fa9bb8c4f64caa = L.marker(
+                [42.373362, -71.118956],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_fb8835e1639e4353ba70c36c0627956a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ca215c1383154d8096fa9bb8c4f64caa.setIcon(icon_fb8835e1639e4353ba70c36c0627956a);
+        
+    
+            marker_ca215c1383154d8096fa9bb8c4f64caa.bindTooltip(
+                `<div>
+                     Harvard
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ada4bc14f5f4471eba099434aababd02 = L.marker(
+                [242.3884, -71.119149],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_3711e007162a49a9bc1c51678de60b53 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_ada4bc14f5f4471eba099434aababd02.setIcon(icon_3711e007162a49a9bc1c51678de60b53);
+        
+    
+            marker_ada4bc14f5f4471eba099434aababd02.bindTooltip(
+                `<div>
+                     Porter
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b5ab73428b5942eb825e00520b14612e = L.marker(
+                [42.3624823, -71.0855752],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_8298646ba446498eb9bb94c27bb18ed1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_b5ab73428b5942eb825e00520b14612e.setIcon(icon_8298646ba446498eb9bb94c27bb18ed1);
+        
+    
+            marker_b5ab73428b5942eb825e00520b14612e.bindTooltip(
+                `<div>
+                     Kendall/MIT
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_81b1b805dfff4679b1a413e23f41ec41 = L.marker(
+                [42.361365, -71.062037],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_b5f144c872e545a1973ebfa7eb53bac5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_81b1b805dfff4679b1a413e23f41ec41.setIcon(icon_b5f144c872e545a1973ebfa7eb53bac5);
+        
+    
+            marker_81b1b805dfff4679b1a413e23f41ec41.bindTooltip(
+                `<div>
+                     Bowdoin
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_338c63d05c58439eb8b2e24638c8bec1 = L.marker(
+                [42.3597379, -71.0593949],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_5731c50e9b4742be968cb943f47f4aa5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_338c63d05c58439eb8b2e24638c8bec1.setIcon(icon_5731c50e9b4742be968cb943f47f4aa5);
+        
+    
+            marker_338c63d05c58439eb8b2e24638c8bec1.bindTooltip(
+                `<div>
+                     Government Center
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_48e0827ed2df4ef28771508a16c8f194 = L.marker(
+                [42.3840364, -71.0766826],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_806fa3ab443f4d5db7078e69adf3767e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_48e0827ed2df4ef28771508a16c8f194.setIcon(icon_806fa3ab443f4d5db7078e69adf3767e);
+        
+    
+            marker_48e0827ed2df4ef28771508a16c8f194.bindTooltip(
+                `<div>
+                     Sullivan Square
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9151a89e8695489b91b3c20eb29d249c = L.marker(
+                [42.355453, -71.0604533],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_4dc68a09eada43eeb60cbac6208f225c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_9151a89e8695489b91b3c20eb29d249c.setIcon(icon_4dc68a09eada43eeb60cbac6208f225c);
+        
+    
+            marker_9151a89e8695489b91b3c20eb29d249c.bindTooltip(
+                `<div>
+                     Downtown Crossing
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc445d58eefe493886953de1bb22359c = L.marker(
+                [42.3663517, -71.0621504],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_c85052a95a224e3fa0790e6535f318b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_cc445d58eefe493886953de1bb22359c.setIcon(icon_c85052a95a224e3fa0790e6535f318b4);
+        
+    
+            marker_cc445d58eefe493886953de1bb22359c.bindTooltip(
+                `<div>
+                     North Station
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6deeb01ce7e74c69ae821d96ae4e1613 = L.marker(
+                [42.3925992, -71.0772636],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_73190adcb07e45a1b6eea63b484fa66e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_6deeb01ce7e74c69ae821d96ae4e1613.setIcon(icon_73190adcb07e45a1b6eea63b484fa66e);
+        
+    
+            marker_6deeb01ce7e74c69ae821d96ae4e1613.bindTooltip(
+                `<div>
+                     Assembly
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92a6ea9d92004150899f10d5d65b6b48 = L.marker(
+                [42.3612215, -71.0705369],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_57f48f57fb8349e0a13ae8f9d6193e1a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_92a6ea9d92004150899f10d5d65b6b48.setIcon(icon_57f48f57fb8349e0a13ae8f9d6193e1a);
+        
+    
+            marker_92a6ea9d92004150899f10d5d65b6b48.bindTooltip(
+                `<div>
+                     Charles/MGH
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_520d24e7c5f740f0a5db2e046d3391de = L.marker(
+                [42.3416775, -71.0832856],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_7ac17289e6bf4ab5ac9cf0219fc65dc0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_520d24e7c5f740f0a5db2e046d3391de.setIcon(icon_7ac17289e6bf4ab5ac9cf0219fc65dc0);
+        
+    
+            marker_520d24e7c5f740f0a5db2e046d3391de.bindTooltip(
+                `<div>
+                     Massachusetts Ave
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_201e26fbecb54828aee494343801ec72 = L.marker(
+                [42.3588199, -71.057611],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_5071b62e2e824b44b1d479cac67fe86e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_201e26fbecb54828aee494343801ec72.setIcon(icon_5071b62e2e824b44b1d479cac67fe86e);
+        
+    
+            marker_201e26fbecb54828aee494343801ec72.bindTooltip(
+                `<div>
+                     State
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fd1df9b840684c34ba2fbd1c367ebd0c = L.marker(
+                [42.3736783, -71.0696535],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_481a0c494d9846dcb470debce4144e87 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_fd1df9b840684c34ba2fbd1c367ebd0c.setIcon(icon_481a0c494d9846dcb470debce4144e87);
+        
+    
+            marker_fd1df9b840684c34ba2fbd1c367ebd0c.bindTooltip(
+                `<div>
+                     Community College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c14599eff61f4675a7dfe4f66fa1bfe4 = L.marker(
+                [42.3628491, -71.0582729],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_2432638d1e324605b68fadde2e89932f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c14599eff61f4675a7dfe4f66fa1bfe4.setIcon(icon_2432638d1e324605b68fadde2e89932f);
+        
+    
+            marker_c14599eff61f4675a7dfe4f66fa1bfe4.bindTooltip(
+                `<div>
+                     Haymarket
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e17c6c98fa674a3ba7b0819dac056a4d = L.marker(
+                [42.3969532, -71.1230994],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_63f40dd160be42019303f15e0346cf98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_e17c6c98fa674a3ba7b0819dac056a4d.setIcon(icon_63f40dd160be42019303f15e0346cf98);
+        
+    
+            marker_e17c6c98fa674a3ba7b0819dac056a4d.bindTooltip(
+                `<div>
+                     Davis Square MBTA Station
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_767f80dbbe2744c1bf3dc7172361b145 = L.marker(
+                [42.3955941, -71.1419891],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_c0800da5ae4442df8e4d5b5865ab0f7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_767f80dbbe2744c1bf3dc7172361b145.setIcon(icon_c0800da5ae4442df8e4d5b5865ab0f7d);
+        
+    
+            marker_767f80dbbe2744c1bf3dc7172361b145.bindTooltip(
+                `<div>
+                     Alewife Station
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8f640eb2180244c295731a95e8d18727 = L.marker(
+                [42.4017092, -71.0771442],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_f2d8da857bdc48f0ae94ca05bc2e090b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_8f640eb2180244c295731a95e8d18727.setIcon(icon_f2d8da857bdc48f0ae94ca05bc2e090b);
+        
+    
+            marker_8f640eb2180244c295731a95e8d18727.bindTooltip(
+                `<div>
+                     Wellington
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c34857d7db044451b56ec141adc0634b = L.marker(
+                [42.356334, -71.062365],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_0a9636ae5345497f9a5c2728ac1d5eee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "white", "markerColor": "black", "prefix": "fa"}
+            );
+            marker_c34857d7db044451b56ec141adc0634b.setIcon(icon_0a9636ae5345497f9a5c2728ac1d5eee);
+        
+    
+            marker_c34857d7db044451b56ec141adc0634b.bindTooltip(
+                `<div>
+                     Park Street
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad1b8a5662d741fe9358220ec4b337cb = L.marker(
+                [42.362837, -71.083926],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_7b07b3cd3d8342ccb443ec9fba103c40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_ad1b8a5662d741fe9358220ec4b337cb.setIcon(icon_7b07b3cd3d8342ccb443ec9fba103c40);
+        
+    
+        var popup_694aa04804544e5ab8112620f992de42 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b23b8a8698d64b12a904d88cb03fac16 = $(`<div id="html_b23b8a8698d64b12a904d88cb03fac16" style="width: 100.0%; height: 100.0%;">hcp.com</div>`)[0];
+            popup_694aa04804544e5ab8112620f992de42.setContent(html_b23b8a8698d64b12a904d88cb03fac16);
+        
+
+        marker_ad1b8a5662d741fe9358220ec4b337cb.bindPopup(popup_694aa04804544e5ab8112620f992de42)
+        ;
+
+        
+    
+    
+            marker_ad1b8a5662d741fe9358220ec4b337cb.bindTooltip(
+                `<div>
+                     Highland Capital Partners
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e584acc64ec147579d5d29bf26137af9 = L.marker(
+                [42.3658143, -71.0924214],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_491062e764464fabb18d81cb4e7332d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_e584acc64ec147579d5d29bf26137af9.setIcon(icon_491062e764464fabb18d81cb4e7332d9);
+        
+    
+        var popup_6159ab0bbb0447809849a1c5efbd1a53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1bfbc80fd3aa4a4fa6a42b6ad12946a3 = $(`<div id="html_1bfbc80fd3aa4a4fa6a42b6ad12946a3" style="width: 100.0%; height: 100.0%;">bvp.com</div>`)[0];
+            popup_6159ab0bbb0447809849a1c5efbd1a53.setContent(html_1bfbc80fd3aa4a4fa6a42b6ad12946a3);
+        
+
+        marker_e584acc64ec147579d5d29bf26137af9.bindPopup(popup_6159ab0bbb0447809849a1c5efbd1a53)
+        ;
+
+        
+    
+    
+            marker_e584acc64ec147579d5d29bf26137af9.bindTooltip(
+                `<div>
+                     Bessemer Venture Partners
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1ddb9b7fcbbb422a961d2a95e72eddb0 = L.marker(
+                [42.3642745, -71.1014927],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_8acec863742d419db4aee77d2c7300b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_1ddb9b7fcbbb422a961d2a95e72eddb0.setIcon(icon_8acec863742d419db4aee77d2c7300b8);
+        
+    
+        var popup_2cec6ba0dd03448ca891ec0d2b73071c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_875b9b75ea0e482684efc0b6ebb45dab = $(`<div id="html_875b9b75ea0e482684efc0b6ebb45dab" style="width: 100.0%; height: 100.0%;">No link registered</div>`)[0];
+            popup_2cec6ba0dd03448ca891ec0d2b73071c.setContent(html_875b9b75ea0e482684efc0b6ebb45dab);
+        
+
+        marker_1ddb9b7fcbbb422a961d2a95e72eddb0.bindPopup(popup_2cec6ba0dd03448ca891ec0d2b73071c)
+        ;
+
+        
+    
+    
+            marker_1ddb9b7fcbbb422a961d2a95e72eddb0.bindTooltip(
+                `<div>
+                     The Engine
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4182b7998b964eb7a9f3ddcf8c571b97 = L.marker(
+                [42.3662152, -71.0924425],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_8daccb0544f74a19a5c20ee40e599b5d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_4182b7998b964eb7a9f3ddcf8c571b97.setIcon(icon_8daccb0544f74a19a5c20ee40e599b5d);
+        
+    
+        var popup_600ba721007e41a3a7a62363ec307e25 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bbf92503a21346f38d66b81820e968b4 = $(`<div id="html_bbf92503a21346f38d66b81820e968b4" style="width: 100.0%; height: 100.0%;">No link registered</div>`)[0];
+            popup_600ba721007e41a3a7a62363ec307e25.setContent(html_bbf92503a21346f38d66b81820e968b4);
+        
+
+        marker_4182b7998b964eb7a9f3ddcf8c571b97.bindPopup(popup_600ba721007e41a3a7a62363ec307e25)
+        ;
+
+        
+    
+    
+            marker_4182b7998b964eb7a9f3ddcf8c571b97.bindTooltip(
+                `<div>
+                     Rhapsody Venture Partners
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e10a5caf35e04cf7a45addeacd62d2bc = L.marker(
+                [42.3622179, -71.0813973],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_f6f0484a82a04ce29afb91bf60a95119 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_e10a5caf35e04cf7a45addeacd62d2bc.setIcon(icon_f6f0484a82a04ce29afb91bf60a95119);
+        
+    
+        var popup_9e3072763f3e4d1cae5cacd82672cd80 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fc08516199de4b88ae675aa95507f61f = $(`<div id="html_fc08516199de4b88ae675aa95507f61f" style="width: 100.0%; height: 100.0%;">matrixpartners.com</div>`)[0];
+            popup_9e3072763f3e4d1cae5cacd82672cd80.setContent(html_fc08516199de4b88ae675aa95507f61f);
+        
+
+        marker_e10a5caf35e04cf7a45addeacd62d2bc.bindPopup(popup_9e3072763f3e4d1cae5cacd82672cd80)
+        ;
+
+        
+    
+    
+            marker_e10a5caf35e04cf7a45addeacd62d2bc.bindTooltip(
+                `<div>
+                     Matrix Partners
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_964278f444c64e1f84201a38b85d5387 = L.marker(
+                [42.3654953, -71.075771],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_3afd7f1df43342ea82f66c3291a2adb4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_964278f444c64e1f84201a38b85d5387.setIcon(icon_3afd7f1df43342ea82f66c3291a2adb4);
+        
+    
+        var popup_b9d9c4c0c3b64f9b94169fcd0ff95199 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f3517f0a09f44fb2ba8954855b7d3a42 = $(`<div id="html_f3517f0a09f44fb2ba8954855b7d3a42" style="width: 100.0%; height: 100.0%;">flagshippioneering.com</div>`)[0];
+            popup_b9d9c4c0c3b64f9b94169fcd0ff95199.setContent(html_f3517f0a09f44fb2ba8954855b7d3a42);
+        
+
+        marker_964278f444c64e1f84201a38b85d5387.bindPopup(popup_b9d9c4c0c3b64f9b94169fcd0ff95199)
+        ;
+
+        
+    
+    
+            marker_964278f444c64e1f84201a38b85d5387.bindTooltip(
+                `<div>
+                     Flagship Pioneering
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_202ae0d053994fcebff0e2e9a45df56c = L.marker(
+                [42.363889, -71.091959],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_09eed9ac18c1496dbf4fcabf5d376e55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_202ae0d053994fcebff0e2e9a45df56c.setIcon(icon_09eed9ac18c1496dbf4fcabf5d376e55);
+        
+    
+        var popup_5a3c24626d1541068a033da765876847 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_23aa5516d9c043409608daf28b63b5c6 = $(`<div id="html_23aa5516d9c043409608daf28b63b5c6" style="width: 100.0%; height: 100.0%;">+1 857-201-2700</div>`)[0];
+            popup_5a3c24626d1541068a033da765876847.setContent(html_23aa5516d9c043409608daf28b63b5c6);
+        
+
+        marker_202ae0d053994fcebff0e2e9a45df56c.bindPopup(popup_5a3c24626d1541068a033da765876847)
+        ;
+
+        
+    
+    
+            marker_202ae0d053994fcebff0e2e9a45df56c.bindTooltip(
+                `<div>
+                     Atlas Venture
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8deb0c8656a44027bfc127887ebb41f0 = L.marker(
+                [42.3622387, -71.0816306],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_cd71c7b3ac4c4addbfd029fca7fd3054 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_8deb0c8656a44027bfc127887ebb41f0.setIcon(icon_cd71c7b3ac4c4addbfd029fca7fd3054);
+        
+    
+        var popup_b2ba452fe1d744ba91a4ddf779fac3c3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c1a292ee1ed8464c83e7f9097b7ba652 = $(`<div id="html_c1a292ee1ed8464c83e7f9097b7ba652" style="width: 100.0%; height: 100.0%;">+1 617-949-2200</div>`)[0];
+            popup_b2ba452fe1d744ba91a4ddf779fac3c3.setContent(html_c1a292ee1ed8464c83e7f9097b7ba652);
+        
+
+        marker_8deb0c8656a44027bfc127887ebb41f0.bindPopup(popup_b2ba452fe1d744ba91a4ddf779fac3c3)
+        ;
+
+        
+    
+    
+            marker_8deb0c8656a44027bfc127887ebb41f0.bindTooltip(
+                `<div>
+                     Clarus Ventures, LLC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_871e70ce106f4ab689e0545fdc667d50 = L.marker(
+                [42.3627822, -71.0835375],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_926017e42a584850b1e277362a4fe86a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_871e70ce106f4ab689e0545fdc667d50.setIcon(icon_926017e42a584850b1e277362a4fe86a);
+        
+    
+        var popup_fc8fc5f9b4fb472a94c77921d7576bd1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_479966d15a2646979a222dd9eb910b1b = $(`<div id="html_479966d15a2646979a222dd9eb910b1b" style="width: 100.0%; height: 100.0%;">chiesiventures.com</div>`)[0];
+            popup_fc8fc5f9b4fb472a94c77921d7576bd1.setContent(html_479966d15a2646979a222dd9eb910b1b);
+        
+
+        marker_871e70ce106f4ab689e0545fdc667d50.bindPopup(popup_fc8fc5f9b4fb472a94c77921d7576bd1)
+        ;
+
+        
+    
+    
+            marker_871e70ce106f4ab689e0545fdc667d50.bindTooltip(
+                `<div>
+                     Chiesi Ventures
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8e48a3a339d1415bb084be87920733df = L.marker(
+                [42.3488549, -71.0829754],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_718b60932af8423688670e4a8cbd59eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_8e48a3a339d1415bb084be87920733df.setIcon(icon_718b60932af8423688670e4a8cbd59eb);
+        
+    
+        var popup_d9d6d509978d42658189c3e23f2a49e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_80b4332b43bb4fd88327b76d57c36fa3 = $(`<div id="html_80b4332b43bb4fd88327b76d57c36fa3" style="width: 100.0%; height: 100.0%;">crv.com</div>`)[0];
+            popup_d9d6d509978d42658189c3e23f2a49e3.setContent(html_80b4332b43bb4fd88327b76d57c36fa3);
+        
+
+        marker_8e48a3a339d1415bb084be87920733df.bindPopup(popup_d9d6d509978d42658189c3e23f2a49e3)
+        ;
+
+        
+    
+    
+            marker_8e48a3a339d1415bb084be87920733df.bindTooltip(
+                `<div>
+                     Charles River Ventures Boston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29e2ee469e244e52ab6982d86cadef0f = L.marker(
+                [42.355055, -71.1057469],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_2cadf84966bc4c7483ba7881a128be81 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_29e2ee469e244e52ab6982d86cadef0f.setIcon(icon_2cadf84966bc4c7483ba7881a128be81);
+        
+    
+        var popup_69c734051a734e4ab1e528ea839243bd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ed13c81643a140439ac4dd2486c9160e = $(`<div id="html_ed13c81643a140439ac4dd2486c9160e" style="width: 100.0%; height: 100.0%;">No link registered</div>`)[0];
+            popup_69c734051a734e4ab1e528ea839243bd.setContent(html_ed13c81643a140439ac4dd2486c9160e);
+        
+
+        marker_29e2ee469e244e52ab6982d86cadef0f.bindPopup(popup_69c734051a734e4ab1e528ea839243bd)
+        ;
+
+        
+    
+    
+            marker_29e2ee469e244e52ab6982d86cadef0f.bindTooltip(
+                `<div>
+                     Nest.Bio Ventures
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bcd6d0df5c01401fb0f0f2d5b09240ff = L.marker(
+                [42.3633729, -71.0815421],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_2176f0e3ac824c4e98b7143852134429 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_bcd6d0df5c01401fb0f0f2d5b09240ff.setIcon(icon_2176f0e3ac824c4e98b7143852134429);
+        
+    
+        var popup_9c2bfc3bc6d84fad8d574e66a654d6fb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6e581643a1c647de8cb2e26ec5082a61 = $(`<div id="html_6e581643a1c647de8cb2e26ec5082a61" style="width: 100.0%; height: 100.0%;">mpmcapital.com</div>`)[0];
+            popup_9c2bfc3bc6d84fad8d574e66a654d6fb.setContent(html_6e581643a1c647de8cb2e26ec5082a61);
+        
+
+        marker_bcd6d0df5c01401fb0f0f2d5b09240ff.bindPopup(popup_9c2bfc3bc6d84fad8d574e66a654d6fb)
+        ;
+
+        
+    
+    
+            marker_bcd6d0df5c01401fb0f0f2d5b09240ff.bindTooltip(
+                `<div>
+                     MPM Capital
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4805dccc9b5341d3a462815cd777c4d0 = L.marker(
+                [42.3627085, -71.0873447],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_5acdc95262c94cbaac243ae9a601696e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_4805dccc9b5341d3a462815cd777c4d0.setIcon(icon_5acdc95262c94cbaac243ae9a601696e);
+        
+    
+        var popup_e3cf6443daee4070ae68be905d5d0394 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_df085046fd3142e5885c193cc9d4a19a = $(`<div id="html_df085046fd3142e5885c193cc9d4a19a" style="width: 100.0%; height: 100.0%;">+1 617-871-3536</div>`)[0];
+            popup_e3cf6443daee4070ae68be905d5d0394.setContent(html_df085046fd3142e5885c193cc9d4a19a);
+        
+
+        marker_4805dccc9b5341d3a462815cd777c4d0.bindPopup(popup_e3cf6443daee4070ae68be905d5d0394)
+        ;
+
+        
+    
+    
+            marker_4805dccc9b5341d3a462815cd777c4d0.bindTooltip(
+                `<div>
+                     Novartis Venture Funds
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_72cc2b28bd1643f98b402b477ef2498e = L.marker(
+                [42.3628252, -71.0837774],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_f8c630fb65c0443492203466935d8de1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_72cc2b28bd1643f98b402b477ef2498e.setIcon(icon_f8c630fb65c0443492203466935d8de1);
+        
+    
+        var popup_abbe6e3b88fd4644ba158d3fc5a41335 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_830d438786a048f491cc8c8b613da23b = $(`<div id="html_830d438786a048f491cc8c8b613da23b" style="width: 100.0%; height: 100.0%;">suffolkequity.com</div>`)[0];
+            popup_abbe6e3b88fd4644ba158d3fc5a41335.setContent(html_830d438786a048f491cc8c8b613da23b);
+        
+
+        marker_72cc2b28bd1643f98b402b477ef2498e.bindPopup(popup_abbe6e3b88fd4644ba158d3fc5a41335)
+        ;
+
+        
+    
+    
+            marker_72cc2b28bd1643f98b402b477ef2498e.bindTooltip(
+                `<div>
+                     Suffolk Equity Partners
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3d75e453a2c44e6cb8c871130b49defd = L.marker(
+                [42.364292, -71.0792115],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_a3aabe29f2044e1d8d7daf5f198b28a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_3d75e453a2c44e6cb8c871130b49defd.setIcon(icon_a3aabe29f2044e1d8d7daf5f198b28a9);
+        
+    
+        var popup_62c2604b15af481f83bb321ac1260931 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6a0eee64243d4f87aec3b1da897f8974 = $(`<div id="html_6a0eee64243d4f87aec3b1da897f8974" style="width: 100.0%; height: 100.0%;">No link registered</div>`)[0];
+            popup_62c2604b15af481f83bb321ac1260931.setContent(html_6a0eee64243d4f87aec3b1da897f8974);
+        
+
+        marker_3d75e453a2c44e6cb8c871130b49defd.bindPopup(popup_62c2604b15af481f83bb321ac1260931)
+        ;
+
+        
+    
+    
+            marker_3d75e453a2c44e6cb8c871130b49defd.bindTooltip(
+                `<div>
+                     Partners Innovation Fund
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_986714db7c164c108975e29cd03eef9c = L.marker(
+                [42.3612633, -71.1153173],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_7313d74d5fb74b73871b2fc41813023c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_986714db7c164c108975e29cd03eef9c.setIcon(icon_7313d74d5fb74b73871b2fc41813023c);
+        
+    
+        var popup_c2d175eea95543a2b97edb89fda7f185 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_61ada3732437490982fb5a04447b3333 = $(`<div id="html_61ada3732437490982fb5a04447b3333" style="width: 100.0%; height: 100.0%;">+1 617-714-5998</div>`)[0];
+            popup_c2d175eea95543a2b97edb89fda7f185.setContent(html_61ada3732437490982fb5a04447b3333);
+        
+
+        marker_986714db7c164c108975e29cd03eef9c.bindPopup(popup_c2d175eea95543a2b97edb89fda7f185)
+        ;
+
+        
+    
+    
+            marker_986714db7c164c108975e29cd03eef9c.bindTooltip(
+                `<div>
+                     Agent Capital
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_83cf43a20ccf4091909f799470c3b9ee = L.marker(
+                [42.3732249, -71.1212686],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_a71ca2977f9744dfb7b3f78a26bb686d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_83cf43a20ccf4091909f799470c3b9ee.setIcon(icon_a71ca2977f9744dfb7b3f78a26bb686d);
+        
+    
+        var popup_08b31694cf9f4fa695686ea3b793ac80 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3ccab68b8c31467d819d45bd83c569f8 = $(`<div id="html_3ccab68b8c31467d819d45bd83c569f8" style="width: 100.0%; height: 100.0%;">+1 857-574-9958</div>`)[0];
+            popup_08b31694cf9f4fa695686ea3b793ac80.setContent(html_3ccab68b8c31467d819d45bd83c569f8);
+        
+
+        marker_83cf43a20ccf4091909f799470c3b9ee.bindPopup(popup_08b31694cf9f4fa695686ea3b793ac80)
+        ;
+
+        
+    
+    
+            marker_83cf43a20ccf4091909f799470c3b9ee.bindTooltip(
+                `<div>
+                     Waterline Ventures, LLC
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af8c0e5216774652987205f6705a5898 = L.marker(
+                [42.3657917, -71.0758793],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_b32c802055de42cab8ed18943acd1be0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_af8c0e5216774652987205f6705a5898.setIcon(icon_b32c802055de42cab8ed18943acd1be0);
+        
+    
+        var popup_f1b04ed7f86b4d2191a012f4e3d4490c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b9949d0d269242599cf337c0e8f941cd = $(`<div id="html_b9949d0d269242599cf337c0e8f941cd" style="width: 100.0%; height: 100.0%;">gurnetpointcapital.com</div>`)[0];
+            popup_f1b04ed7f86b4d2191a012f4e3d4490c.setContent(html_b9949d0d269242599cf337c0e8f941cd);
+        
+
+        marker_af8c0e5216774652987205f6705a5898.bindPopup(popup_f1b04ed7f86b4d2191a012f4e3d4490c)
+        ;
+
+        
+    
+    
+            marker_af8c0e5216774652987205f6705a5898.bindTooltip(
+                `<div>
+                     Gurnet Point Capital
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76d65c75f1f14113a320887e3ec3b3ae = L.marker(
+                [42.372309, -71.123509],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_9a76346eeeb54fafbf6b163c096d91bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_76d65c75f1f14113a320887e3ec3b3ae.setIcon(icon_9a76346eeeb54fafbf6b163c096d91bd);
+        
+    
+        var popup_f523798b127d412894edbfb661e05c58 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6384dda8dd574797a6c7ee3c75ef3381 = $(`<div id="html_6384dda8dd574797a6c7ee3c75ef3381" style="width: 100.0%; height: 100.0%;">generalcatalyst.com</div>`)[0];
+            popup_f523798b127d412894edbfb661e05c58.setContent(html_6384dda8dd574797a6c7ee3c75ef3381);
+        
+
+        marker_76d65c75f1f14113a320887e3ec3b3ae.bindPopup(popup_f523798b127d412894edbfb661e05c58)
+        ;
+
+        
+    
+    
+            marker_76d65c75f1f14113a320887e3ec3b3ae.bindTooltip(
+                `<div>
+                     General Catalyst
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d83463da57074f99ac9117ae76588e56 = L.marker(
+                [42.3720467, -71.1182765],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_559dfc4a500f472b88cf6dbb57c3fc96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "dollar", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_d83463da57074f99ac9117ae76588e56.setIcon(icon_559dfc4a500f472b88cf6dbb57c3fc96);
+        
+    
+        var popup_0acb46eddf9c41209187992b13d5b640 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_114bfe3a738c4d7e9158404ba509345d = $(`<div id="html_114bfe3a738c4d7e9158404ba509345d" style="width: 100.0%; height: 100.0%;">+1 650-204-1636</div>`)[0];
+            popup_0acb46eddf9c41209187992b13d5b640.setContent(html_114bfe3a738c4d7e9158404ba509345d);
+        
+
+        marker_d83463da57074f99ac9117ae76588e56.bindPopup(popup_0acb46eddf9c41209187992b13d5b640)
+        ;
+
+        
+    
+    
+            marker_d83463da57074f99ac9117ae76588e56.bindTooltip(
+                `<div>
+                     Xfund
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3b6fd9a543d7446488a731f80b131662 = L.marker(
+                [42.3504997, -71.1053991],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_5a47847618eb44a8a397c756f8fff744 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_3b6fd9a543d7446488a731f80b131662.setIcon(icon_5a47847618eb44a8a397c756f8fff744);
+        
+    
+        var popup_dc6235dec31a4d1e806a9ac4c0fdb62e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a859ea6051a84054abb1da1895d69632 = $(`<div id="html_a859ea6051a84054abb1da1895d69632" style="width: 100.0%; height: 100.0%;">Boston, MA 02215, Estados Unidos</div>`)[0];
+            popup_dc6235dec31a4d1e806a9ac4c0fdb62e.setContent(html_a859ea6051a84054abb1da1895d69632);
+        
+
+        marker_3b6fd9a543d7446488a731f80b131662.bindPopup(popup_dc6235dec31a4d1e806a9ac4c0fdb62e)
+        ;
+
+        
+    
+    
+            marker_3b6fd9a543d7446488a731f80b131662.bindTooltip(
+                `<div>
+                     Universidad de Boston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_615e8401300444bcad3e7f9ea56df5b9 = L.marker(
+                [42.3809947, -71.0727119],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_d5516addc58946e88578348a1bbb8278 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_615e8401300444bcad3e7f9ea56df5b9.setIcon(icon_d5516addc58946e88578348a1bbb8278);
+        
+    
+        var popup_e654792b8ab84c448ed29e2055f5070d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0a44aa30f8f14fcf80b9c6285cd0c3df = $(`<div id="html_0a44aa30f8f14fcf80b9c6285cd0c3df" style="width: 100.0%; height: 100.0%;">No link registered</div>`)[0];
+            popup_e654792b8ab84c448ed29e2055f5070d.setContent(html_0a44aa30f8f14fcf80b9c6285cd0c3df);
+        
+
+        marker_615e8401300444bcad3e7f9ea56df5b9.bindPopup(popup_e654792b8ab84c448ed29e2055f5070d)
+        ;
+
+        
+    
+    
+            marker_615e8401300444bcad3e7f9ea56df5b9.bindTooltip(
+                `<div>
+                     Cambridge College
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_871e5cf878174b88bd3538fcd7139c7d = L.marker(
+                [42.360091, -71.09416],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_205cea79f53141e788884080f6d7f71c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_871e5cf878174b88bd3538fcd7139c7d.setIcon(icon_205cea79f53141e788884080f6d7f71c);
+        
+    
+        var popup_6200236fc1144ae18d3fdfe48e3891d2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d641fda48a12463a864956db14200325 = $(`<div id="html_d641fda48a12463a864956db14200325" style="width: 100.0%; height: 100.0%;">77 Massachusetts Ave, Cambridge, MA 02139, Estados Unidos</div>`)[0];
+            popup_6200236fc1144ae18d3fdfe48e3891d2.setContent(html_d641fda48a12463a864956db14200325);
+        
+
+        marker_871e5cf878174b88bd3538fcd7139c7d.bindPopup(popup_6200236fc1144ae18d3fdfe48e3891d2)
+        ;
+
+        
+    
+    
+            marker_871e5cf878174b88bd3538fcd7139c7d.bindTooltip(
+                `<div>
+                     Instituto Tecnológico de Massachusetts
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc01392e3a4142b8a43d7a8db2d84c80 = L.marker(
+                [42.3770029, -71.1166601],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_c2c4af97b49044bb800ce6f77b333bf1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_cc01392e3a4142b8a43d7a8db2d84c80.setIcon(icon_c2c4af97b49044bb800ce6f77b333bf1);
+        
+    
+        var popup_fde31575226b4410a5abcdfea9c801d1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8e8239a13d114cbabe33151147d3dcef = $(`<div id="html_8e8239a13d114cbabe33151147d3dcef" style="width: 100.0%; height: 100.0%;">+1 617-495-1000</div>`)[0];
+            popup_fde31575226b4410a5abcdfea9c801d1.setContent(html_8e8239a13d114cbabe33151147d3dcef);
+        
+
+        marker_cc01392e3a4142b8a43d7a8db2d84c80.bindPopup(popup_fde31575226b4410a5abcdfea9c801d1)
+        ;
+
+        
+    
+    
+            marker_cc01392e3a4142b8a43d7a8db2d84c80.bindTooltip(
+                `<div>
+                     Universidad de Harvard
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af49e8da533a4ad7a6e43e6711b531ef = L.marker(
+                [42.3801793, -71.1173636],
+                {}
+            ).addTo(map_2778219dd5b843b3949bc4561fdc38c1);
+        
+    
+            var icon_eefc5cdb399d499186ce2ed8608a2b27 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_af49e8da533a4ad7a6e43e6711b531ef.setIcon(icon_eefc5cdb399d499186ce2ed8608a2b27);
+        
+    
+        var popup_a4b8e9b4a8924986bc0d6b1c655464d7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_09113b4255ca454d9821f6895906f73d = $(`<div id="html_09113b4255ca454d9821f6895906f73d" style="width: 100.0%; height: 100.0%;">+1 617-868-9600</div>`)[0];
+            popup_a4b8e9b4a8924986bc0d6b1c655464d7.setContent(html_09113b4255ca454d9821f6895906f73d);
+        
+
+        marker_af49e8da533a4ad7a6e43e6711b531ef.bindPopup(popup_a4b8e9b4a8924986bc0d6b1c655464d7)
+        ;
+
+        
+    
+    
+            marker_af49e8da533a4ad7a6e43e6711b531ef.bindTooltip(
+                `<div>
+                     Lesley University
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

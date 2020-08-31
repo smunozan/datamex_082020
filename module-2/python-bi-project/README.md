@@ -1,58 +1,58 @@
-![IronHack Logo](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_d5c5793015fec3be28a63c4fa3dd4d55.png)
-
 # Project: Business Intelligence with Python
 
 ## Overview
 
-The goal of this project is for you to apply the things that we have learned in the previous lessons in data visualizations with python and derive Business Intelligence insights. For this project, you will choose a data set and explore it using Python. You will put together a Story using different visualizations for presentation showing the insights you have derived from the data. You should demonstrate your proficiency using Python and the concepts you have learned throughout the chapter. 
-
-**You will be working individually for this project**, but we'll be guiding you along the process and helping you as you go. Show us what you've got!
+The goal of this project is to apply the things that I had learned in the previous lessons in data visualizations with python and derive Business Intelligence insights. For this project, I chose some data sets and other sources of information and explore them using Python. 
 
 ---
 
-## Technical Requirements
+## Technical Tools
 
-The technical requirements for this project are as follows:
+The technical tools I used were:
 
-* You must construct a Story using visualizations consisting of at least 5 different plots for the data set you have chosen.
-* Choose a different visualizations types for each of the 5 plots. Try to implement the concepts that we covered in the chapter (sorting, filtering, different , aggregations, etc.)
-* Save the file in the python-bi-project in Github, and your data should be saved to a folder named data.
-* You should also include a README.md file that describes the steps you took, your thought process as you built your visualizations
-
-## Necessary Deliverables
-
-The following deliverables should be pushed to your Github repo for this chapter.
-
-* **A Jupyter notebook uploaded to Git Hub** that contains the visualizations you created from your data set.
-* **A data folder** containing the data set you used for your project.
-* **A ``README.md`` file** containing a detailed explanation of your approach and code for constructing visualizations and organizing them into a Story as well as your results, obstacles encountered, lessons learned, and a link to your completed Tableau workbook.
+* Python
+* Mongo (import databases)
+* Pandas (data frames for data exploration)
+* Matplotlib (for plotting graphs)
+* Folium (maps and heatmaps)
+* Selenium (web scraping)
+* Numpy (for arrays manipulation)
 
 
-## Suggested Ways to Get Started
+## Project details:
+### Goal: decide where (geographical position) to start/found a startup.
+#### Startup details (simulation of a startup we want to found):
+* **Name**: Habits.AI
+* **Web page**: www.habits.ai
+* **Description:** B2B platform for well-being and productivity. Through artificial intelligence, gamification, and behavioral science, we build healthy cultures that increase your employees’ engagement, productivity, loyalty and health.
+* **Category**: Digital Health, well-being, B2B, technology, artificial intelligence & machine learning.
+* **Important details/questions about the place**:
+    * Want to be close to other tech companies.
+    * There should be an entrepreneur ecosystem around the city and country (venture capitals, coworkings, universities, etc.).
+    * There are big companies around (potencial clients).
+    * How many startups fails in the city/country?
 
-* **Find a data set to process** - a great place to start looking would be [Awesome Public Data Sets](https://github.com/awesomedata/awesome-public-datasets) and [Kaggle Data Sets](https://www.kaggle.com/datasets).
-* **Explore the data set** and come up with a variety of visualizations that you can potentially include in your story.
-* **Break the project down into different steps** - identify the entities/dimensions in your data set, explore them each individually, and then progress to analyzing different combinations of them.
-* **Use the tools in your tool kit** - the concepts and methods you have learned in the business intelligence chapter as well as some of the things you've learned in previous chapters. This is a great way to start tying everything you've learned together!
-* **Work through the lessons in class** & ask questions when you need to! Think about adding relevant code to your project each night, instead of, you know... _procrastinating_.
-* **Commit early, commit often**, don’t be afraid of doing something incorrectly because you can always roll back to a previous version.
-* **Consult documentation and resources provided** to better understand the tools you are using and how to accomplish what you want.
 
 
-## Project Feedback + Evaluation
+## Steps
 
-* __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
+The steps that I followed through the proccess of achieving the project were the following:
 
-* __Creativity__: Did you add a personal spin or creative element into your project submission? Did you incorporate domain knowledge or unique perspective into your analysis.
+* Define a simulated startup I want to found/start.
+* First step: organize data about startups around the world that are registered in Crunchbase: (Dataset url: https://www.kaggle.com/arindam235/startup-investments-crunchbase). Filter the startups in categories that matters for my startup.
+* Second step: include the latitud and longitud of each city in the previous step DataFrame (Database url: https://www.kaggle.com/dataset/f66386cd35268fd2ae9c7c03e6e4d93c9b1607265c1adef13f99a76e420be997/version/1). The goal is to show the heatmap of the world with the position of the startups.
+* Third step: Organize the dataframe by NUMBER OF STARTUPS in each Country/City.
+* Fourth step: Organize the dataframe by FUNDING TOTAL (USD) (mean) in each Country/City.
+* Fifth step: Organize the dataframe by STATUS (operating or closed) in each Country/City.
+* Sixth step: Merge all the DataFrames from the steps below. Get the final ranking of cities.
+* CITY SELECTION: After the analysis, the best city option to start Habits.AI (startup) will be Cambridge in USA.
+* Seventh step: Map and analysis of Cambrige city. Make a map of the city that includes location of Venture Capitals, Universities, Coworking Spaces and Subway Stations. (Data scraped from Google Maps).
+* Eighth step: Make a heatmap of Cambrige (with all the previous information) and take a decisition where to put the office.
+* Final decision: As we can see on the map and heatmap, the best place to get an office and start Habits.AI, is around Kendall Square, there are three coworkings, it is close to more than 8 venture capital offices, have to access to public transportation and is few blocks away from the MIT University. The coworkings that are good option to have an office are The Link (www.link-kendall.org), Cambridge Coworking (www.cambridgecoworking.com) and Cove (www.cove.is).
 
-* __Code Quality__: Did you follow code style guidance and best practices covered in class?
 
-* __Total__: Your instructors will give you a total score on your project between:
+## Next Steps:
 
-    **Score**|**Expectations**
-    -----|-----
-    0|Does not meet expectations
-    1|Meets expectactions, good job!
-    2|Exceeds expectations, you wonderful creature, you!
-
-This will be useful as an overall gauge of whether you met the project goals, but __the more important scores are described in the specs above__, which can help you identify where to focus your efforts for the next project!
+* Get a more complete database about startups failures in cities/countries around the world to have a more confident analysis.
+* Include a variable about living costs in the different cities.
+* Include a variable about how easy (time and budget) is to start a company in each country.
