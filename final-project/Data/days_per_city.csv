@@ -1,0 +1,925 @@
+City-Country,Average days
+"A Coruna, Spain",2.0
+"Aachen, Germany",2.0
+"Aalborg, Denmark",2.0
+"Aarhus, Denmark",2.0
+"Abbotsford, Canada",1.0
+"Aberdeen, United Kingdom",4.0
+"Abidjan, Cote d'Ivoire",3.0
+"Abu Dhabi, United Arab Emirates",2.0
+"Accra, Ghana",3.0
+"Addis Ababa, Ethiopia",2.0
+"Adelaide, Australia",4.0
+"Agadir, Morocco",4.0
+"Agra, India",1.0
+"Aguascalientes, Mexico",4.0
+"Ahmedabad, India",2.0
+"Ajaccio, Corsica, France",3.0
+"Alanya, Turkey",6.0
+"Albuquerque, NM, United States",1.0
+"Alesund, Norway",2.0
+"Alexandria, Egypt",2.0
+"Algiers, Algeria",3.0
+"Alicante, Spain",3.0
+"Allentown, PA, United States",3.0
+"Almaty, Kazakhstan",3.0
+"Amalfi, Italy",5.0
+"Amed, Bali, Indonesia",3.0
+"Amman, Jordan",4.0
+"Amritsar, India",1.0
+"Amsterdam, Netherlands",3.0
+"Anchorage, AK, United States",5.0
+"Andorra la Vella, Andorra",2.0
+"Ankara, Turkey",1.0
+"Ann Arbor, MI, United States",2.0
+"Annecy, France",2.0
+"Antalya, Turkey",5.0
+"Antananarivo, Madagascar",2.0
+"Antigua, Guatemala",3.0
+"Antofagasta, Chile",4.0
+"Antwerp, Belgium",2.0
+"Ao Nang, Thailand",3.0
+"Apia, Samoa",3.0
+"Arendal, Norway",3.0
+"Arequipa, Peru",3.0
+"Arnhem, Netherlands",2.0
+"Arrecife, Lanzarote, Spain",4.0
+"Asheville, NC, United States",3.0
+"Astana, Kazakhstan",5.0
+"Asuncion, Paraguay",4.0
+"Athens, Greece",3.0
+"Atlanta, GA, United States",3.0
+"Auckland, New Zealand",3.0
+"Aurangabad, India",3.0
+"Austin, TX, United States",3.0
+"Aveiro, Portugal",2.0
+"Avignon, France",2.0
+"Baguio, Philippines",1.0
+"Baku, Azerbaijan",3.0
+"Baltimore, MD, United States",3.0
+"Bandar Seri Begawan, Brunei",2.0
+"Bandung, Indonesia",4.0
+"Banff, Canada",5.0
+"Bangkok, Thailand",3.0
+"Banja Luka, Bosnia",2.0
+"Banjul, Gambia",3.0
+"Bansko, Bulgaria",5.0
+"Bar, Montenegro",4.0
+"Barcelona, Spain",3.0
+"Bari, Italy",3.0
+"Barranquilla, Colombia",3.0
+"Basel, Switzerland",2.0
+"Bath, United Kingdom",4.0
+"Batumi, Georgia",4.0
+"Bay Islands, Honduras",4.0
+"Beijing, China",3.0
+"Beirut, Lebanon",4.0
+"Belem, Brazil",3.0
+"Belfast, United Kingdom",3.0
+"Belgrade, Serbia",3.0
+"Belize City, Belize",1.0
+"Bellingham, WA, United States",2.0
+"Belo Horizonte, Brazil",4.0
+"Bengaluru, India",4.0
+"Benghazi, Libya",3.0
+"Bergen, Norway",2.0
+"Berlin, Germany",3.0
+"Bern, Switzerland",2.0
+"Bethlehem, PA, United States",3.0
+"Bhopal, India",3.0
+"Bhubaneswar, India",3.0
+"Biarritz, France",3.0
+"Bielefeld, Germany",3.0
+"Bilbao, Spain",3.0
+"Birmingham, AL, United States",3.0
+"Birmingham, United Kingdom",2.0
+"Bishkek, Kyrgyzstan",3.0
+"Bismarck, ND, United States",3.0
+"Bloomington, IN, United States",2.0
+"Bocas del Toro, Panama",6.0
+"Bodrum, Turkey",2.0
+"Bogota, Colombia",3.0
+"Boise, ID, United States",3.0
+"Bologna, Italy",2.0
+"Boracay, Philippines",4.0
+"Bordeaux, France",3.0
+"Boston, MA, United States",3.0
+"Boulder, CO, United States",4.0
+"Bournemouth, United Kingdom",3.0
+"Bowling Green, KY, United States",3.0
+"Bozeman, MT, United States",3.0
+"Bradenton, FL, United States",3.0
+"Braga, Portugal",2.0
+"Brasilia, Brazil",2.0
+"Brasov, Romania",3.0
+"Bratislava, Slovakia",2.0
+"Breda, Netherlands",3.0
+"Bremen, Germany",2.0
+"Bridgetown, Barbados",1.0
+"Brighton, United Kingdom",2.0
+"Brisbane, Australia",3.0
+"Bristol, United Kingdom",3.0
+"Brno, Czechia",2.0
+"Bruges, Belgium",1.0
+"Brussels, Belgium",2.0
+"Bucaramanga, Colombia",1.0
+"Bucharest, Romania",4.0
+"Budapest, Hungary",3.0
+"Budva, Montenegro",4.0
+"Buenos Aires, Argentina",4.0
+"Buffalo, NY, United States",2.0
+"Burgas, Bulgaria",8.0
+"Burlington, NC, United States",3.0
+"Bursa, Turkey",4.0
+"Busan, South Korea",3.0
+"Byron Bay, Australia",3.0
+"Cabarete, Dominican Republic",3.0
+"Cabo San Lucas, Mexico",4.0
+"Cagliari, Italy",1.0
+"Cairns, Australia",4.0
+"Cairo, Egypt",3.0
+"Calgary, Canada",3.0
+"Cali, Colombia",4.0
+"Cambridge, United Kingdom",3.0
+"Campinas, Brazil",3.0
+"Campo Grande, Brazil",6.0
+"Canberra, Australia",2.0
+"Cancun, Mexico",4.0
+"Canggu, Bali, Indonesia",4.0
+"Cannes, France",2.0
+"Canton, OH, United States",3.0
+"Cape Town, South Africa",5.0
+"Caracas, Venezuela",2.0
+"Cardiff, United Kingdom",1.0
+"Carlsbad, CA, United States",3.0
+"Carson City, NV, United States",3.0
+"Cartagena, Colombia",4.0
+"Casablanca, Morocco",2.0
+"Cavtat, Croatia",2.0
+"Caye Caulker, Belize",4.0
+"Cayenne, French Guiana",3.0
+"Cebu, Philippines",4.0
+"Cedar Rapids, IA, United States",3.0
+"Chamonix, France",4.0
+"Chandigarh, India",2.0
+"Changsha, China",5.0
+"Changzhou, China",3.0
+"Chania, Crete, Greece",3.0
+"Charleston, SC, United States",2.0
+"Charlotte Amalie, United States Virgin Islands",1.0
+"Charlotte, NC, United States",2.0
+"Chattanooga, TN, United States",2.0
+"Cheltenham, United Kingdom",4.0
+"Chelyabinsk, Russia",3.0
+"Chengdu, China",4.0
+"Chennai, India",3.0
+"Chiang Mai, Thailand",5.0
+"Chiang Rai, Thailand",2.0
+"Chicago, IL, United States",3.0
+"Chico, CA, United States",3.0
+"Chisinau, Moldova",2.0
+"Chongqing, China",2.0
+"Christchurch, New Zealand",3.0
+"Cincinnati, OH, United States",4.0
+"Ciutadella, Menorca, Spain",6.0
+"Cleveland, OH, United States",3.0
+"Cluj, Romania",3.0
+"Cochabamba, Bolivia",3.0
+"Cody, WY, United States",3.0
+"Coimbatore, India",8.0
+"Coimbra, Portugal",1.0
+"Cologne, Germany",2.0
+"Colombo, Sri Lanka",3.0
+"Colorado Springs, CO, United States",2.0
+"Columbus, GA, United States",3.0
+"Columbus, OH, United States",3.0
+"Conakry, Guinea",3.0
+"Constanta, Romania",3.0
+"Copan, Honduras",9.0
+"Copenhagen, Denmark",3.0
+"Cordoba, Argentina",4.0
+"Cordoba, Spain",2.0
+"Cork, Ireland",2.0
+"Corralejo, Canary Islands, Spain",5.0
+"Coventry, United Kingdom",3.0
+"Cozumel, Mexico",3.0
+"Craiova, Romania",3.0
+"Cuenca, Ecuador",4.0
+"Curitiba, Brazil",3.0
+"Cusco, Peru",4.0
+"Da Lat, Vietnam",3.0
+"Da Nang, Vietnam",3.0
+"Daegu, South Korea",1.0
+"Daejeon, South Korea",1.0
+"Dahab, Egypt",2.0
+"Dakar, Senegal",3.0
+"Dalian, China",3.0
+"Dallas, TX, United States",3.0
+"Dar es Salaam, Tanzania",3.0
+"Darmstadt, Germany",4.0
+"Darwin, Australia",3.0
+"Datong, China",2.0
+"Davao, Philippines",6.0
+"Dayton, OH, United States",1.0
+"Daytona Beach, FL, United States",3.0
+"Delhi, India",2.0
+"Denpasar, Bali, Indonesia",2.0
+"Denver, CO, United States",3.0
+"Des Moines, IA, United States",2.0
+"Detroit, MI, United States",3.0
+"Deventer, Netherlands",3.0
+"Dhaka, Bangladesh",5.0
+"Dijon, France",1.0
+"Dili, East Timor",3.0
+"Dnipro, Ukraine",3.0
+"Doha, Qatar",1.0
+"Dongguan, China",3.0
+"Dortmund, Germany",1.0
+"Dresden, Germany",2.0
+"Dubai, United Arab Emirates",3.0
+"Dublin, Ireland",3.0
+"Dubrovnik, Croatia",2.0
+"Dubuque, IA, United States",3.0
+"Duluth, MN, United States",8.0
+"Dunedin, New Zealand",2.0
+"Durban, South Africa",3.0
+"Dushanbe, Tajikistan",3.0
+"Dusseldorf, Germany",2.0
+"Eau Claire, WI, United States",3.0
+"Edinburgh, United Kingdom",3.0
+"Edmonton, Canada",2.0
+"Eindhoven, Netherlands",2.0
+"El Gouna, Egypt",3.0
+"El Jadida, Morocco",3.0
+"Ericeira, Portugal",8.0
+"Erlangen, Germany",1.0
+"Essaouira, Morocco",2.0
+"Eugene, OR, United States",1.0
+"Exeter, United Kingdom",1.0
+"Fargo, ND, United States",1.0
+"Faro, Algarve, Portugal",3.0
+"Ferrara, Italy",3.0
+"Fes, Morocco",2.0
+"Flagstaff, AZ, United States",3.0
+"Florence, Italy",2.0
+"Florianopolis, Brazil",4.0
+"Fort Collins, CO, United States",5.0
+"Fort Lauderdale, FL, United States",2.0
+"Fort McMurray, Canada",3.0
+"Fort Myers, FL, United States",4.0
+"Fort Smith, AR, United States",3.0
+"Fortaleza, Brazil",3.0
+"Frankfurt, Germany",2.0
+"Fukuoka, Japan",3.0
+"Funchal, Madeira, Portugal",5.0
+"Fuzhou, China",3.0
+"Gaborone, Botswana",3.0
+"Gainesville, FL, United States",3.0
+"Galapagos Islands, Ecuador",5.0
+"Galle, Sri Lanka",3.0
+"Galveston, TX, United States",2.0
+"Galway, Ireland",3.0
+"Gdansk, Poland",3.0
+"General Santos, Philippines",3.0
+"Geneva, Switzerland",2.0
+"Genoa, Italy",2.0
+"George Town, Cayman Islands",2.0
+"George Town, Penang, Malaysia",4.0
+"Georgetown, Guyana",2.0
+"Ghent, Belgium",1.0
+"Gibraltar, Gibraltar",2.0
+"Gili Air, Indonesia",3.0
+"Glasgow, United Kingdom",2.0
+"Goa, India",5.0
+"Goiania, Brazil",4.0
+"Gold Coast, Australia",3.0
+"Gori, Georgia",3.0
+"Gothenburg, Sweden",3.0
+"Granada, Spain",3.0
+"Grand Junction, CO, United States",3.0
+"Grand Rapids, MI, United States",2.0
+"Grande Prairie, Canada",2.0
+"Graz, Austria",3.0
+"Greeley, CO, United States",7.0
+"Green Bay, WI, United States",3.0
+"Greensboro, NC, United States",3.0
+"Greenville, SC, United States",3.0
+"Grenoble, France",3.0
+"Groningen, Netherlands",3.0
+"Guadalajara, Mexico",3.0
+"Guanajuato, Mexico",2.0
+"Guangzhou, China",2.0
+"Guatemala City, Guatemala",1.0
+"Guayaquil, Ecuador",2.0
+"Guelph, Canada",4.0
+"Guilin, China",2.0
+"Guiyang, China",4.0
+"Gurgaon, India",4.0
+"Guwahati, India",1.0
+"Gwangju, South Korea",2.0
+"Haarlem, Netherlands",4.0
+"Hagatna, Guam",3.0
+"Hagen, Germany",2.0
+"Haifa, Israel",2.0
+"Halifax, Canada",2.0
+"Hamamatsu, Japan",3.0
+"Hamburg, Germany",3.0
+"Hamilton, Bermuda",3.0
+"Hangzhou, China",2.0
+"Hannover, Germany",1.0
+"Hanoi, Vietnam",4.0
+"Harare, Zimbabwe",1.0
+"Harbin, China",3.0
+"Harrisonburg, VA, United States",3.0
+"Hartford, CT, United States",1.0
+"Havana, Cuba",4.0
+"Heidelberg, Germany",2.0
+"Helsinki, Finland",2.0
+"Hilo, Hawaii, United States",5.0
+"Hiroshima, Japan",2.0
+"Ho Chi Minh City, Vietnam",4.0
+"Hobart, Australia",3.0
+"Hof, Germany",6.0
+"Hohhot, China",1.0
+"Hoi An, Vietnam",3.0
+"Hong Kong, Hong Kong",3.0
+"Honolulu, Hawaii, United States",4.0
+"Houston, TX, United States",2.0
+"Hua Hin, Thailand",5.0
+"Huai'an, China",3.0
+"Hue, Vietnam",2.0
+"Huntsville, AL, United States",3.0
+"Hvar, Croatia",3.0
+"Hyderabad, India",3.0
+"Iasi, Romania",1.0
+"Ibiza, Spain",4.0
+"Incline Village, NV, United States",3.0
+"Indianapolis, IN, United States",3.0
+"Indore, India",3.0
+"Innsbruck, Austria",2.0
+"Interlaken, Switzerland",3.0
+"Iowa City, IA, United States",2.0
+"Ipoh, Malaysia",4.0
+"Iquique, Chile",3.0
+"Isfahan, Iran",3.0
+"Isla Mujeres, Mexico",2.0
+"Istanbul, Turkey",3.0
+"Itapema, Brazil",3.0
+"Ithaca, NY, United States",1.0
+"Ivano-Frankivsk, Ukraine",3.0
+"Izmir, Turkey",2.0
+"Jacksonville, FL, United States",2.0
+"Jaipur, India",3.0
+"Jakarta, Indonesia",3.0
+"Janesville, WI, United States",3.0
+"Jarabacoa, Dominican Republic",3.0
+"Javea, Spain",6.0
+"Jeddah, Saudi Arabia",1.0
+"Jeju Island, South Korea",5.0
+"Jerusalem, Israel",2.0
+"Joao Pessoa, Brazil",1.0
+"Jodhpur, India",2.0
+"Johannesburg, South Africa",2.0
+"Johor Bahru, Malaysia",2.0
+"Joliet, IL, United States",3.0
+"Juarez, Mexico",3.0
+"Kaesong, North Korea",1.0
+"Kagoshima, Japan",3.0
+"Kaliningrad, Russia",4.0
+"Kampala, Uganda",2.0
+"Kandy, Sri Lanka",4.0
+"Kannur, India",3.0
+"Kanpur, India",3.0
+"Kansas City, MO, United States",3.0
+"Kaohsiung, Taiwan",2.0
+"Karachi, Pakistan",3.0
+"Karlsruhe, Germany",3.0
+"Kassel, Germany",1.0
+"Kathmandu, Nepal",4.0
+"Katowice, Poland",2.0
+"Kauai, Hawaii, United States",5.0
+"Kaunas, Lithuania",2.0
+"Kazan, Russia",2.0
+"Kelowna, Canada",2.0
+"Key West, FL, United States",2.0
+"Kharkiv, Ukraine",3.0
+"Khartoum, Sudan",1.0
+"Kiev, Ukraine",3.0
+"Kigali, Rwanda",2.0
+"Kingston, Jamaica",2.0
+"Kitakyushu, Japan",3.0
+"Kitchener, Canada",2.0
+"Klaipeda, Lithuania",2.0
+"Knoxville, TN, United States",2.0
+"Ko Chang, Thailand",6.0
+"Ko Lanta, Thailand",4.0
+"Ko Lipe, Thailand",6.0
+"Ko Pha Ngan, Thailand",5.0
+"Ko Phi Phi, Thailand",3.0
+"Ko Samui, Thailand",4.0
+"Ko Tao, Thailand",5.0
+"Kobe, Japan",2.0
+"Kochi, India",3.0
+"Kolkata, India",4.0
+"Konya, Turkey",2.0
+"Kosice, Slovakia",2.0
+"Kota Kinabalu, Malaysia",4.0
+"Kotor, Montenegro",3.0
+"Krabi, Thailand",4.0
+"Kraków, Poland",3.0
+"Krasnodar, Russia",5.0
+"Krasnoyarsk, Russia",4.0
+"Kuala Lumpur, Malaysia",3.0
+"Kuching, Malaysia",4.0
+"Kumasi, Ghana",1.0
+"Kunming, China",3.0
+"Kuta, Bali, Indonesia",3.0
+"Kuwait City, Kuwait",3.0
+"Kyoto, Japan",3.0
+"La Crosse, WI, United States",3.0
+"La Paz, Bolivia",4.0
+"La Paz, Mexico",2.0
+"La Plata, Argentina",3.0
+"La Serena, Chile",2.0
+"Lafayette, LA, United States",2.0
+"Lagos, Nigeria",3.0
+"Lake Balaton, Hungary",3.0
+"Lake Como, Italy",2.0
+"Lake Tahoe, CA, United States",4.0
+"Langkawi, Malaysia",4.0
+"Lanzhou, China",2.0
+"Laredo, TX, United States",3.0
+"Larnaca, Cyprus",5.0
+"Las Palmas, Canary Islands, Spain",5.0
+"Las Vegas, NV, United States",3.0
+"Lausanne, Switzerland",2.0
+"Lawrence, KS, United States",4.0
+"Leeds, United Kingdom",2.0
+"Leeuwarden, Netherlands",4.0
+"Leicester, United Kingdom",4.0
+"Leiden, Netherlands",2.0
+"Leipzig, Germany",2.0
+"Leuven, Belgium",4.0
+"Lexington, KY, United States",3.0
+"León, Nicaragua",3.0
+"Liberia, Costa Rica",2.0
+"Lille, France",2.0
+"Lilongwe, Malawi",3.0
+"Lima, Peru",4.0
+"Limassol, Cyprus",3.0
+"Lincoln, NE, United States",3.0
+"Lisbon, Portugal",4.0
+"Little Rock, AR, United States",4.0
+"Liverpool, United Kingdom",2.0
+"Livingstone, Zambia",1.0
+"Ljubljana, Slovenia",2.0
+"Lodz, Poland",2.0
+"London, United Kingdom",3.0
+"Los Angeles, CA, United States",3.0
+"Louisville, KY, United States",3.0
+"Luang Prabang, Laos",4.0
+"Lublin, Poland",2.0
+"Lucca, Italy",2.0
+"Lucknow, India",2.0
+"Lugano, Switzerland",4.0
+"Luoyang, China",3.0
+"Lusaka, Zambia",2.0
+"Luton, United Kingdom",1.0
+"Luxembourg, Luxembourg",2.0
+"Luxor, Egypt",2.0
+"Lviv, Ukraine",4.0
+"Lyon, France",3.0
+"Macau, China",1.0
+"Madison, WI, United States",2.0
+"Madrid, Spain",3.0
+"Madurai, India",2.0
+"Makassar, Indonesia",4.0
+"Makati, Philippines",3.0
+"Malacca, Malaysia",2.0
+"Malaga, Spain",3.0
+"Malang, Indonesia",5.0
+"Male, Maldives",4.0
+"Malmö, Sweden",2.0
+"Mamaia, Romania",2.0
+"Managua, Nicaragua",2.0
+"Manama, Bahrain",2.0
+"Manaus, Brazil",3.0
+"Manchester, NH, United States",3.0
+"Manchester, United Kingdom",2.0
+"Mancora, Peru",4.0
+"Mandalay, Myanmar",2.0
+"Manila, Philippines",3.0
+"Maputo, Mozambique",2.0
+"Mar del Plata, Argentina",6.0
+"Maracaibo, Venezuela",3.0
+"Marbella, Spain",3.0
+"Marrakesh, Morocco",3.0
+"Marseille, France",2.0
+"Matara, Sri Lanka",1.0
+"Mataram, Lombok, Indonesia",4.0
+"McLeod Ganj, India",3.0
+"Mecca, Saudi Arabia",3.0
+"Medan, Sumatra, Indonesia",3.0
+"Medellín, Colombia",4.0
+"Medford, OR, United States",6.0
+"Melbourne, Australia",4.0
+"Memphis, TN, United States",2.0
+"Mendoza, Argentina",3.0
+"Merida, Mexico",3.0
+"Mexico City, Mexico",4.0
+"Miami, FL, United States",3.0
+"Milan, Italy",2.0
+"Milwaukee, WI, United States",2.0
+"Minca, Colombia",3.0
+"Minneapolis, MN, United States",3.0
+"Minsk, Belarus",3.0
+"Missoula, MT, United States",2.0
+"Mobile, AL, United States",3.0
+"Modena, Italy",3.0
+"Mombasa, Kenya",5.0
+"Monaco, Monaco",1.0
+"Moncton, Canada",1.0
+"Monrovia, Liberia",3.0
+"Montanita, Ecuador",3.0
+"Montego Bay, Jamaica",4.0
+"Monterey, CA, United States",1.0
+"Monterrey, Mexico",5.0
+"Montevideo, Uruguay",3.0
+"Montpellier, France",3.0
+"Montreal, Canada",4.0
+"Moradabad, India",3.0
+"Moscow, Russia",3.0
+"Mostar, Bosnia",1.0
+"Mountain View, CA, United States",4.0
+"Mui Ne, Vietnam",3.0
+"Mumbai, India",4.0
+"Muncie, IN, United States",3.0
+"Munich, Germany",2.0
+"Muscat, Oman",1.0
+"Mykonos, Greece",2.0
+"Mysore, India",2.0
+"Nagasaki, Japan",3.0
+"Nago, Okinawa, Japan",5.0
+"Nagoya, Japan",3.0
+"Naha, Okinawa, Japan",4.0
+"Nairobi, Kenya",3.0
+"Nanaimo, Canada",2.0
+"Nanchang, China",1.0
+"Nanjing, China",3.0
+"Nanning, China",1.0
+"Nantes, France",3.0
+"Naples, Italy",2.0
+"Nashik, India",3.0
+"Nashville, TN, United States",3.0
+"Nassau, The Bahamas",3.0
+"Natal, Brazil",2.0
+"New Haven, CT, United States",3.0
+"New Orleans, LA, United States",4.0
+"New York City, NY, United States",4.0
+"Newcastle Upon Tyne, United Kingdom",2.0
+"Newport Beach, CA, United States",3.0
+"Nha Trang, Vietnam",4.0
+"Nice, France",3.0
+"Nicosia, Cyprus",3.0
+"Nijmegen, Netherlands",3.0
+"Ningbo, China",3.0
+"Nis, Serbia",2.0
+"Nizhny, Russia",1.0
+"Norfolk, VA, United States",3.0
+"Northampton, United Kingdom",3.0
+"Norwich, United Kingdom",2.0
+"Nottingham, United Kingdom",2.0
+"Nouakchott, Mauritania",3.0
+"Nouméa, New Caledonia",3.0
+"Novi Sad, Serbia",3.0
+"Novocherkassk, Russia",3.0
+"Novosibirsk, Russia",2.0
+"Nuremberg, Germany",2.0
+"Nuuk, Greenland",3.0
+"Oakland, CA, United States",4.0
+"Oaxaca, Mexico",5.0
+"Odessa, TX, United States",3.0
+"Odessa, Ukraine",5.0
+"Ogden, UT, United States",3.0
+"Okayama, Japan",1.0
+"Okinawa City, Okinawa, Japan",3.0
+"Oklahoma City, OK, United States",4.0
+"Omaha, NE, United States",4.0
+"Oranjestad, Aruba",3.0
+"Orlando, FL, United States",3.0
+"Osaka, Japan",3.0
+"Osijek, Croatia",2.0
+"Oslo, Norway",2.0
+"Ottawa, Canada",3.0
+"Oulu, Finland",1.0
+"Oxford, United Kingdom",3.0
+"Padova, Italy",2.0
+"Pai, Thailand",2.0
+"Palawan, Philippines",6.0
+"Palermo, Italy",3.0
+"Palm Desert, CA, United States",3.0
+"Palma, Mallorca, Spain",4.0
+"Palo Alto, CA, United States",4.0
+"Pamplona, Spain",2.0
+"Panajachel, Guatemala",3.0
+"Panama City, Panama",3.0
+"Paphos, Cyprus",5.0
+"Paramaribo, Suriname",6.0
+"Paris, France",3.0
+"Park City, UT, United States",3.0
+"Patna, India",3.0
+"Pattaya, Thailand",4.0
+"Pensacola, FL, United States",2.0
+"Perth, Australia",4.0
+"Petaluma, CA, United States",3.0
+"Philadelphia, PA, United States",2.0
+"Philipsburg, Sint Maarten",3.0
+"Phnom Penh, Cambodia",3.0
+"Phoenix, AZ, United States",3.0
+"Phu Quoc, Vietnam",4.0
+"Phuket, Thailand",4.0
+"Pisa, Italy",1.0
+"Pittsburgh, PA, United States",4.0
+"Playa del Carmen, Mexico",5.0
+"Plovdiv, Bulgaria",2.0
+"Podgorica, Montenegro",2.0
+"Pokhara, Nepal",4.0
+"Ponta Delgada, Azores, Portugal",2.0
+"Port Elizabeth, South Africa",3.0
+"Port Louis, Mauritius",3.0
+"Port Moresby, Papua New Guinea",3.0
+"Port of Spain, Trinidad and Tobago",5.0
+"Port-au-Prince, Haiti",10.0
+"Portimão, Portugal",5.0
+"Portland, ME, United States",2.0
+"Portland, OR, United States",4.0
+"Porto Alegre, Brazil",3.0
+"Porto, Portugal",4.0
+"Portsmouth, United Kingdom",4.0
+"Poznan, Poland",2.0
+"Prague, Czechia",3.0
+"Praia, Cape Verde",1.0
+"Princeton, NJ, United States",1.0
+"Pristina, Kosovo",1.0
+"Providence, RI, United States",4.0
+"Puebla, Mexico",2.0
+"Puerto Escondido, Mexico",4.0
+"Puerto Vallarta, Mexico",4.0
+"Puerto Viejo, Costa Rica",3.0
+"Puerto del Rosario, Fuerteventura, Spain",2.0
+"Pune, India",2.0
+"Punta Cana, Dominican Republic",5.0
+"Punta del Este, Uruguay",2.0
+"Pyongyang, North Korea",3.0
+"Qingdao, China",1.0
+"Quebec City, Canada",3.0
+"Queenstown, New Zealand",3.0
+"Queretaro, Mexico",4.0
+"Quito, Ecuador",3.0
+"Rabat, Morocco",3.0
+"Raleigh, NC, United States",5.0
+"Ramallah, Palestine",1.0
+"Rapid City, SD, United States",2.0
+"Reading, PA, United States",3.0
+"Reading, United Kingdom",1.0
+"Recife, Brazil",2.0
+"Regina, Canada",4.0
+"Rennes, France",3.0
+"Reno, NV, United States",2.0
+"Rethymno, Greece",7.0
+"Reykjavik, Iceland",4.0
+"Rhodes, Greece",4.0
+"Richmond, VA, United States",2.0
+"Riga, Latvia",2.0
+"Rijeka, Croatia",3.0
+"Rimini, Italy",2.0
+"Rio de Janeiro, Brazil",4.0
+"Rishikesh, India",4.0
+"Riverside, CA, United States",3.0
+"Riyadh, Saudi Arabia",4.0
+"Road Town, British Virgin Islands",4.0
+"Roanoke, VA, United States",5.0
+"Rochester, NY, United States",2.0
+"Rockford, IL, United States",2.0
+"Rome, Italy",3.0
+"Rosario, Argentina",4.0
+"Rostov-on-Don, Russia",2.0
+"Rotterdam, Netherlands",2.0
+"Rouen, France",3.0
+"Rovaniemi, Finland",1.0
+"Rzeszow, Poland",2.0
+"Sa Pa, Vietnam",2.0
+"Sacramento, CA, United States",2.0
+"Saint Helier, Jersey",3.0
+"Saint Petersburg, Russia",3.0
+"Salem, MA, United States",3.0
+"Salem, OR, United States",3.0
+"Salento, Colombia",3.0
+"Salt Lake City, UT, United States",3.0
+"Salta, Argentina",3.0
+"Salvador, Brazil",3.0
+"Salzburg, Austria",2.0
+"Samara, Russia",3.0
+"San Antonio, TX, United States",3.0
+"San Cristóbal de las Casas, Mexico",4.0
+"San Diego, CA, United States",3.0
+"San Francisco, CA, United States",4.0
+"San Ignacio, Belize",3.0
+"San Jose, CA, United States",4.0
+"San José, Costa Rica",2.0
+"San Juan del Sur, Nicaragua",5.0
+"San Juan, Puerto Rico",3.0
+"San Miguel de Allende, Mexico",2.0
+"San Pedro Sula, Honduras",2.0
+"San Pedro de Atacama, Chile",3.0
+"San Pedro, Belize",6.0
+"San Salvador, El Salvador",2.0
+"San Sebastian, Spain",2.0
+"Sandpoint, ID, United States",3.0
+"Santa Barbara, CA, United States",2.0
+"Santa Cruz, Bolivia",5.0
+"Santa Fe, NM, United States",3.0
+"Santa Marta, Colombia",4.0
+"Santa Rosa, CA, United States",2.0
+"Santa Teresa, Costa Rica",5.0
+"Santiago, Chile",3.0
+"Santo Domingo, Dominican Republic",3.0
+"Santorini, Greece",3.0
+"Sanur, Bali, Indonesia",2.0
+"Sao Luis, Brazil",2.0
+"Sapporo, Japan",4.0
+"Sarajevo, Bosnia",2.0
+"Sarasota, FL, United States",2.0
+"Saskatoon, Canada",3.0
+"Savannah, GA, United States",2.0
+"Sayulita, Mexico",4.0
+"Scottsdale, AZ, United States",3.0
+"Scranton, PA, United States",3.0
+"Seattle, WA, United States",3.0
+"Semarang, Indonesia",3.0
+"Seminyak, Bali, Indonesia",4.0
+"Sendai, Japan",3.0
+"Seoul, South Korea",4.0
+"Seville, Spain",3.0
+"Shanghai, China",3.0
+"Shaoxing, China",3.0
+"Sharjah, United Arab Emirates",1.0
+"Sheffield, United Kingdom",5.0
+"Shenyang, China",3.0
+"Shenzhen, China",3.0
+"Shiraz, Iran",3.0
+"Shrewsbury, United Kingdom",3.0
+"Siargao, Philippines",4.0
+"Siem Reap, Cambodia",4.0
+"Siena, Italy",2.0
+"Sihanoukville, Cambodia",3.0
+"Singapore, Singapore",3.0
+"Sinuiju, North Korea",3.0
+"Sioux Falls, SD, United States",2.0
+"Skopje, North Macedonia",2.0
+"Sliema, Malta",4.0
+"Sochi, Russia",3.0
+"Sofia, Bulgaria",4.0
+"Sorocaba, Brazil",1.0
+"Southampton, United Kingdom",2.0
+"Sparks, NV, United States",3.0
+"Split, Croatia",4.0
+"Spokane, WA, United States",3.0
+"St John's, Antigua and Barbuda",3.0
+"St. Cloud, MN, United States",3.0
+"St. Gallen, Switzerland",1.0
+"St. Louis, MO, United States",3.0
+"Stamford, CT, United States",3.0
+"Stanley, Falkland Islands",3.0
+"Stockholm, Sweden",3.0
+"Strasbourg, France",2.0
+"Stuttgart, Germany",2.0
+"Surabaya, Indonesia",2.0
+"Surakarta, Indonesia",3.0
+"Surat, India",1.0
+"Suva, Fiji",6.0
+"Suzhou, China",1.0
+"Sydney, Australia",4.0
+"Syracuse, NY, United States",3.0
+"Szczecin, Poland",2.0
+"São José dos Campos, Brazil",2.0
+"São Paulo, Brazil",4.0
+"Taghazout, Morocco",6.0
+"Taichung, Taiwan",2.0
+"Tainan, Taiwan",2.0
+"Taipei, Taiwan",4.0
+"Tallahassee, FL, United States",1.0
+"Tallinn, Estonia",3.0
+"Tamarindo, Costa Rica",7.0
+"Tampa, FL, United States",4.0
+"Tampere, Finland",2.0
+"Tangier, Morocco",2.0
+"Taos, NM, United States",1.0
+"Tarifa, Spain",4.0
+"Tartu, Estonia",2.0
+"Tashkent, Uzbekistan",3.0
+"Tbilisi, Georgia",4.0
+"Tegucigalpa, Honduras",4.0
+"Tehran, Iran",2.0
+"Tel Aviv, Israel",4.0
+"Tenerife, Canary Islands, Spain",4.0
+"Texel, Netherlands",2.0
+"The Hague, Netherlands",1.0
+"Thessaloniki, Greece",2.0
+"Tianjin, China",2.0
+"Tijuana, Mexico",1.0
+"Tilburg, Netherlands",2.0
+"Timisoara, Romania",3.0
+"Tirana, Albania",2.0
+"Tokyo, Japan",4.0
+"Toledo, OH, United States",3.0
+"Toronto, Canada",4.0
+"Torshavn, Faroe Islands, Denmark",3.0
+"Toulouse, France",4.0
+"Trento, Italy",2.0
+"Trier, Germany",2.0
+"Trieste, Italy",2.0
+"Tripoli, Libya",3.0
+"Tromso, Norway",4.0
+"Trondheim, Norway",2.0
+"Tucson, AZ, United States",4.0
+"Tulsa, OK, United States",3.0
+"Tulum, Mexico",4.0
+"Tunis, Tunisia",4.0
+"Turin, Italy",2.0
+"Turku, Finland",2.0
+"Ubud, Bali, Indonesia",4.0
+"Udon Thani, Thailand",1.0
+"Ufa, Russia",4.0
+"Ulaanbaatar, Mongolia",4.0
+"Uluwatu, Bali, Indonesia",3.0
+"Ulyanovsk, Russia",3.0
+"Urumqi, China",2.0
+"Ushuaia, Argentina",3.0
+"Utrecht, Netherlands",3.0
+"Valencia, Spain",4.0
+"Valparaíso, Chile",2.0
+"Vancouver, Canada",4.0
+"Vang Vieng, Laos",4.0
+"Varanasi, India",3.0
+"Varkala, India",1.0
+"Varna, Bulgaria",3.0
+"Vatican City, Vatican City",1.0
+"Venice, Italy",2.0
+"Verona, Italy",2.0
+"Victoria, Canada",2.0
+"Victoria, Seychelles",4.0
+"Victorville, CA, United States",3.0
+"Vienna, Austria",3.0
+"Vientiane, Laos",3.0
+"Vilnius, Lithuania",2.0
+"Virginia Beach, VA, United States",4.0
+"Visakhapatnam, India",1.0
+"Visalia, CA, United States",3.0
+"Vista, CA, United States",2.0
+"Vitória, Brazil",2.0
+"Viña del Mar, Chile",3.0
+"Vladivostok, Russia",6.0
+"Volgograd, Russia",2.0
+"Wanaka, New Zealand",2.0
+"Warner Robins, GA, United States",3.0
+"Warsaw, Poland",2.0
+"Washington, DC, United States",3.0
+"Waterloo, Canada",2.0
+"Wellington, New Zealand",4.0
+"Wenzhou, China",6.0
+"West Palm Beach, FL, United States",3.0
+"Whistler, Canada",5.0
+"Wichita, KS, United States",3.0
+"Willemstad, Curaçao",3.0
+"Wilmington, NC, United States",3.0
+"Windhoek, Namibia",4.0
+"Windsor, Canada",2.0
+"Winnipeg, Canada",2.0
+"Worcester, MA, United States",3.0
+"Wrocław, Poland",2.0
+"Wuhan, China",3.0
+"Wuhu, China",3.0
+"Wuxi, China",3.0
+"Xi An, China",3.0
+"Xiamen, China",2.0
+"Xining, China",1.0
+"Yangon, Myanmar",3.0
+"Yangshuo, China",3.0
+"Yaounde, Cameroon",3.0
+"Yekaterinburg, Russia",2.0
+"Yerevan, Armenia",3.0
+"Yichang, China",3.0
+"Yiwu, China",4.0
+"Yogyakarta, Indonesia",4.0
+"Yokohama, Japan",4.0
+"York, United Kingdom",2.0
+"Yuba City, CA, United States",3.0
+"Yuma, AZ, United States",3.0
+"Zadar, Croatia",3.0
+"Zagreb, Croatia",3.0
+"Zandvoort, Netherlands",1.0
+"Zhangjiakou, China",3.0
+"Zhuhai, China",3.0
+"Zurich, Switzerland",2.0
+"Zwolle, Netherlands",1.0
