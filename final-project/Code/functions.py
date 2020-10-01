@@ -13,6 +13,8 @@ import ast
 import pyttsx3
 import time
 import re
+import plotly.graph_objects as go
+from IPython.display import HTML
 #print('Librerias cargadas...')
 
 #cargar configuracions
@@ -21,22 +23,26 @@ engine.setProperty("voice", engine.getProperty("voices")[31].id)
 engine.setProperty('rate', 200)
 r = sr.Recognizer()
 
-def iniciar_conv():
-    print('TRIPTY: Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.\n')
-    engine.say("Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.")
-    engine.runAndWait()
-    return mic_rec()
+#cargando archivos
+with open('stopwords_es.txt', 'r') as f:
+    sw = [line.strip() for line in f]
 
 #función para escuchar reconocer desde el micrófono la lista de ciudades
-def mic_rec():
+def mic_rec(inicio=True):
+    if inicio:
+        print('TRIPTY: Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.\n')
+        engine.say("Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.")
+        engine.runAndWait()
+    r = sr.Recognizer()
     with sr.Microphone() as source:
         print('TRIPTY: Para empezar dime algunas ciudades que conoces:\n')
         engine.say("Para empezar dime algunas ciudades que conoces:")
         engine.runAndWait()
+        print('-')
         audio = r.listen(source)
         try:
             text = r.recognize_google(audio, language="es-en")
-            print("USUARIO: {}\n".format(text))
+            print("USUARIO: {}\n".format(text.capitalize()))
             time.sleep(2)
             print("TRIPTY: Ya lo tengo. Voy a buscar otros viajeros similares a ti y te recomendaré nuevas ciudades para que vayas. Espera unos segundos.\n")
             engine.say("Ya lo tengo. Voy a buscar otros viajeros similares a ti y te recomendaré nuevas ciudades para que vayas. Espera unos segundos.")
@@ -46,12 +52,10 @@ def mic_rec():
             print("TRIPTY: No entendí lo que dices, comencemos nuevamente.\n")
             engine.say("No entendí lo que dices, comencemos nuevamente.")
             engine.runAndWait()
-            mic_rec()
+            return mic_rec(inicio=False)
 
 #limpieza de datos
 def clean_city_input(text):
-    with open('stopwords_es.txt', 'r') as f:
-        sw = [line.strip() for line in f]
     sep_clean = [i for i in text.split(" ") if i not in sw]
     combinaciones = sep_clean + [e+' '+sep_clean[i+1] for i,e in enumerate(sep_clean) if i+1<len(sep_clean)]
     return combinaciones
@@ -223,12 +227,13 @@ def definir_start():
         engine.say("¿En qué ciudad quieres comenzar? Puedes seleccionar una de las ciudades que te recomendé u otra.")
         engine.runAndWait()
 
+        r = sr.Recognizer()
         with sr.Microphone() as source:
-            engine.runAndWait()
+            print('-')
             audio = r.listen(source)
             try:
                 text = r.recognize_google(audio, language="es-en")
-                print("USUARIO: {}\n".format(text))
+                print("USUARIO: {}\n".format(text.capitalize()))
                 clean_input = clean_city_input(text)
                 start = find_best_match(clean_input, uso='otro')
                 #time.sleep(2)
@@ -240,7 +245,7 @@ def definir_start():
                 print("TRIPTY: No entendí lo que dices, comencemos nuevamente.\n")
                 engine.say("No entendí lo que dices, comencemos nuevamente.")
                 engine.runAndWait()
-                definir_start()
+                return definir_start()
     
 #funcion para definir la duración del viaje
 def definir_tiempo():
@@ -248,32 +253,33 @@ def definir_tiempo():
         engine.say("¿Alrededor de cuántos días quieres que dure tu viaje? Yo te recomiendo que sea de 20 a 30 días.")
         engine.runAndWait()
 
+        r = sr.Recognizer()
         with sr.Microphone() as source:
-            engine.runAndWait()
+            print('-')
             audio = r.listen(source)
             try:
                 text = r.recognize_google(audio, language="es-en")
-                print("USUARIO: {}\n".format(text))
+                print("USUARIO: {}\n".format(text.capitalize()))
                 dias = re.findall('\d+',text)
-                #time.sleep(2)
-                if int(dias[0])<=15:
-                    print(f"TRIPTY: {dias[0]} son pocos días, será un tour rápido.\n")
-                    engine.say(f"{dias[0]} son pocos días, será un tour rápido.")
+                dia_final = int(dias[0])
+                if dia_final<=15:
+                    print(f"TRIPTY: {dia_final} son pocos días, será un tour rápido.\n")
+                    engine.say(f"{dia_final} son pocos días, será un tour rápido.")
                     engine.runAndWait()
-                elif int(dias[0])<=30:
-                    print(f"TRIPTY: {dias[0]} días están bien para conocer.\n")
-                    engine.say(f"{dias[0]} días están bien para conocer.")
+                elif dia_final<=30:
+                    print(f"TRIPTY: {dia_final} días están bien para conocer.\n")
+                    engine.say(f"{dia_final} días están bien para conocer.")
                     engine.runAndWait()
                 else:
-                    print(f"TRIPTY: {dias[0]} son bastantes días, va a ser un buen viaje.\n")
-                    engine.say(f"{dias[0]} son bastantes días, va a ser un buen viaje.")
+                    print(f"TRIPTY: {dia_final} son bastantes días, va a ser un buen viaje.\n")
+                    engine.say(f"{dia_final} son bastantes días, va a ser un buen viaje.")
                     engine.runAndWait()
-                return int(dias[0])
+                return dia_final
             except:
                 print("TRIPTY: No entendí lo que dices, comencemos nuevamente.\n")
                 engine.say("No entendí lo que dices, comencemos nuevamente.")
                 engine.runAndWait()
-                definir_tiempo()
+                return definir_tiempo()
 
 #función para generar la ruta recomendada
 def ruta_recomendada():
@@ -283,13 +289,14 @@ def ruta_recomendada():
 
     start = definir_start()
     wanted_days = definir_tiempo()
+    #print(wanted_days, type(wanted_days))
     
     #cargamos la tabla con todas las ciudades
     cities = pd.read_csv('../data/nomadlist_cities.csv')
 
     #creamos el dataframe con la ciudad de inicio
     ruta = cities[cities['City-Country']==start].reset_index(drop=True)
-
+    
     indice = 0
     days = 0
 
@@ -344,9 +351,11 @@ def ruta_recomendada():
                 break
         indice+=1
         days = int(sum(list(ruta['Average days'])))
+        ruta['Presupuesto'] = ruta['Average days']*ruta['Cost/day (USD)']
+        presupuesto = int(sum(list(ruta['Presupuesto'])))
 
-    print(f'TRIPTY: Ya tengo tu viaje listo, según información de otros usuarios, lo recomendable es que sea de {days} días. Podrás conocer {len(ruta)} ciudades en ese tiempo.\n')
-    engine.say(f'Ya tengo tu viaje listo, según información de otros usuarios, lo recomendable es que sea de {days} días. Podrás conocer {len(ruta)} ciudades en ese tiempo.')
+    print(f'TRIPTY: Ya tengo tu viaje listo, según información de otros usuarios, lo recomendable es que sea de {days} días. Podrás conocer {len(ruta)} ciudades en ese tiempo y el presupuesto aproximado es de ${presupuesto} dólares.\n')
+    engine.say(f'Ya tengo tu viaje listo, según información de otros usuarios, lo recomendable es que sea de {days} días. Podrás conocer {len(ruta)} ciudades en ese tiempo y el presupuesto aproximado es de {presupuesto} dólares.')
     engine.runAndWait()
 
     print(f'TRIPTY: Aquí está el itinerario completo que yo te recomiendo:\n')
@@ -357,7 +366,8 @@ def ruta_recomendada():
     for i in range(len(ruta)):
         print(f"Día {int(dias)}:   {ruta.loc[i,'City-Country']}")
         dias += ruta.loc[i,'Average days']
-    print(f"Día {int(dias)}:   Fin del viaje :(")
+        time.sleep(0.5)
+    print(f"Día {int(dias)-1}:   Fin del viaje :(\n")
     return ruta
 
 #funcion para generar mapa de la ruta
@@ -383,7 +393,7 @@ def mapa_ruta(df):
     #pintamos las imagenes en los marcadores de cada ciudad
     for i in range(len(df)):
         try:
-            icon = folium.features.CustomIcon(icon_image=f"../Images/Cities/{df.loc[i,'City-Country']}.png" ,icon_size=(80,80))
+            icon = folium.features.CustomIcon(icon_image=f"../Images/Cities/{df.loc[i,'City-Country']}.png" ,icon_size=(50,50))
         except:
             try:
                 icon_path = crop_image(df.loc[i,'Photo'],df.loc[i,'City-Country'])
@@ -401,21 +411,132 @@ def mapa_ruta(df):
     
     return mapa
 
+#función para graficar las temperaturas promedio
+def temp_graph(ruta):
+    print('TRIPTY: Te voy a mostrar la temperatura promedio de estás ciudades por mes. Así podras definir la fecha del viaje.')
+    engine.say("Te voy a mostrar la temperatura promedio de estás ciudades por mes. Así podras definir la fecha del viaje.")
+    engine.runAndWait()
+    
+    #sacamos las columnas de temperatura del df
+    temp_cols = [i for i in ruta.columns if i.startswith('Temp')]
+    new_cols = [i.split(' ')[-1] for i in temp_cols]
+    
+    #generamos un nuevo dataframe de temperaturas
+    temps_df = ruta[temp_cols].T.set_index([new_cols])
+    
+    #creamos columna con el promedio de la temperatura de cada mes
+    tama = temps_df.shape[1]
+    for e,i in enumerate(new_cols):
+        promedio = sum(temps_df.iloc[e,:tama])/len(temps_df.iloc[e,:tama])
+        temps_df.loc[i,'Average Temp (°C)'] = round(promedio,2)
+    
+    #usamos plotly para gráficar la linea
+    fig = go.Figure(data=go.Scatter(
+        x=temps_df.index, 
+        y=temps_df['Average Temp (°C)']))
+    
+    #configuramos el título y labels del gráfico
+    fig.update_layout(
+        title={
+            'text': "Temperatura promedio por mes (itinerario recomendado)",
+            'y':0.88,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'},
+        xaxis_title="Months",
+        yaxis_title="Average Temp (°C)")
+    
+    #retornamos el gráfico
+    fig.show()
+    
+    #sacamos el mes más frio y caliente
+    meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
+    
+    maxi = temps_df[temps_df['Average Temp (°C)']==temps_df['Average Temp (°C)'].max()]
+    mini = temps_df[temps_df['Average Temp (°C)']==temps_df['Average Temp (°C)'].min()]
+
+    temp_max = (meses[new_cols.index(maxi.index[0])],round(maxi['Average Temp (°C)'].values[0],2))
+    temp_min = (meses[new_cols.index(mini.index[0])],round(mini['Average Temp (°C)'].values[0],2))
+    
+    time.sleep(2)
+    print(f'TRIPTY: El mes más frio es {temp_min[0]}, su promedio es {temp_min[1]} grados Celsius y el más caluroso es {temp_max[0]} con {temp_max[1]} grados Celsius.\n')
+    engine.say(f'El mes más frio es {temp_min[0]}, su promedio es {temp_min[1]} grados Celsius y el más caluroso es {temp_max[0]} con {temp_max[1]} grados Celsius.')
+    engine.runAndWait()
+    
+    return True
+
+#función para graficar las variables extras
+def extra_graph(ruta):
+    print('TRIPTY: Para terminar, mira este gráfico con 20 variables para que puedas evaluar mejor la ruta. Vienen algunas como, qué tan caminables o seguras son las ciudades de la ruta.')
+    engine.say("Para terminar, mira este gráfico con 20 variables para que puedas evaluar mejor la ruta. Vienen algunas como, qué tan caminables o seguras son las ciudades de la ruta.")
+    engine.runAndWait()
+    
+    new_cols = ['Overall Score', 'Quality of life score','Family score','Fun', 'Safety', 
+           'Education level', 'English speaking', 'Walkability', 'Peace', 'Traffic safety',
+           'Hospitals', 'Happiness', 'Nightlife', 'Free WiFi in city', 'Places to work from',
+           'Friendly to foreigners', 'Freedom of speech', 'Racial tolerance', 'Female friendly',
+           'LGBTQ friendly']
+
+    #generamos un nuevo dataframe de temperaturas
+    temps_df = ruta[new_cols].T
+
+    #creamos columna con el promedio de la temperatura de cada mes
+    tama = temps_df.shape[1]
+    for e,i in enumerate(new_cols):
+        promedio = sum(temps_df.iloc[e,:tama])/len(temps_df.iloc[e,:tama])
+        temps_df.loc[i,'Average (/5)'] = round(promedio,2)
+
+    #usamos plotly para gráficar la linea
+    fig = go.Figure(data=go.Scatter(
+        x=temps_df.index, 
+        y=temps_df['Average (/5)']))
+
+    #configuramos el título y labels del gráfico
+    fig.update_layout(
+        title={
+            'text': "Puntaje de la ruta (20 variables)",
+            'y':0.88,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'},
+        xaxis_title="Variables",
+        yaxis_title="Promedio (/5)")
+
+    #retornamos el gráfico
+    fig.show()
+    
+    time.sleep(3)
+    
+    print('TRIPTY: Espero que ya tengas todos los factores necesarios para evaluar la ruta y comprar tus vuelos.\n')
+    engine.say("Espero que ya tengas todos los factores necesarios para evaluar la ruta y comprar tus vuelos.")
+    engine.runAndWait()
+    
+    #imagen de cierre
+    imagen = '<center><img src="../Images/cierre.jpg" width="240" height="240" align="center"/></center>'
+    display(HTML(imagen))
+    
+    print('TRIPTY: ¡Buen viaje! Estoy lista para ayudarte cuando tengas tu siguiente aventura. Bye Bye\n')
+    engine.say("¡Buen viaje! Estoy lista para ayudarte cuando tengas tu siguiente aventura. Bye Bye")
+    engine.runAndWait()
+    
+    return True
+
 #función para despertar a TRIPTY
 def despertar_tripty():
     time.sleep(2)
     print('TRIPTY: Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir DESPIERTA TRIPTY para que continuemos.\n')
-    engine.say("Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir DESPIERTA TRIPTY para que continuemos.")
+    engine.say("Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir: 'DESPIERTA TRIPTY' para que continuemos.")
     engine.runAndWait()
 
     texto = []
     while 'despierta' not in texto:
+        r = sr.Recognizer()
         with sr.Microphone() as source:
             audio = r.listen(source)
             try:
                 text = r.recognize_google(audio, language="es-en")
                 texto = clean_city_input(text)
-                
+                print(texto)
             except:
                 pass
     print('TRIPTY: Ya desperté, fue una buena siesta...\n')
@@ -424,7 +545,7 @@ def despertar_tripty():
     return 'Tripty despierta'
 
 def tripty():
-    user_input = iniciar_conv()
+    user_input = mic_rec()
     clean_input = clean_city_input(user_input)
     cities_input = find_best_match(clean_input)
     recomendaciones = reco_cities(cities_input)
@@ -434,3 +555,6 @@ def tripty():
     ruta = ruta_recomendada()
     ruta_mapa = mapa_ruta(ruta)
     display(ruta_mapa)
+    grafico_temp = temp_graph(ruta)
+    cierre = extra_graph(ruta)
+    return '¡Buen viaje!'
