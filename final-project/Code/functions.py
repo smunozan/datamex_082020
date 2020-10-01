@@ -15,6 +15,8 @@ import time
 import re
 import plotly.graph_objects as go
 from IPython.display import HTML
+from IPython.core.display import display
+
 #print('Librerias cargadas...')
 
 #cargar configuracions
@@ -22,37 +24,49 @@ engine = pyttsx3.init()
 engine.setProperty("voice", engine.getProperty("voices")[31].id)
 engine.setProperty('rate', 200)
 r = sr.Recognizer()
+terminal_output = open('/dev/stdout', 'w')
+
+#llamamos csvs con los datos
+cities_lst = pd.read_csv('../data/cities_for_user_input.csv') #ciudades con diferentes nombres
+users = pd.read_csv('../data/user_cities.csv') #csv de viajeros y las ciudades visitadas escrapeado de Nomad list
+cities = pd.read_csv('../data/nomadlist_cities.csv') #tabla con todas las ciudades
+ruta_prueba = pd.read_csv('../data/ruta_ejemplo.csv') #cargamos una ruta de prueba
 
 #cargando archivos
 with open('stopwords_es.txt', 'r') as f:
     sw = [line.strip() for line in f]
 
-#función para escuchar reconocer desde el micrófono la lista de ciudades
-def mic_rec(inicio=True):
-    if inicio:
-        print('TRIPTY: Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.\n')
-        engine.say("Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.")
-        engine.runAndWait()
-    r = sr.Recognizer()
+#función de micrófono
+def microfono():
     with sr.Microphone() as source:
-        print('TRIPTY: Para empezar dime algunas ciudades que conoces:\n')
-        engine.say("Para empezar dime algunas ciudades que conoces:")
-        engine.runAndWait()
-        print('-')
-        audio = r.listen(source)
+        r.adjust_for_ambient_noise(source)
         try:
+            print('Escuchando...')
+            audio = r.listen(source, phrase_time_limit=15, timeout=2)
             text = r.recognize_google(audio, language="es-en")
-            print("USUARIO: {}\n".format(text.capitalize()))
-            time.sleep(2)
-            print("TRIPTY: Ya lo tengo. Voy a buscar otros viajeros similares a ti y te recomendaré nuevas ciudades para que vayas. Espera unos segundos.\n")
-            engine.say("Ya lo tengo. Voy a buscar otros viajeros similares a ti y te recomendaré nuevas ciudades para que vayas. Espera unos segundos.")
-            engine.runAndWait()
             return text
         except:
-            print("TRIPTY: No entendí lo que dices, comencemos nuevamente.\n")
-            engine.say("No entendí lo que dices, comencemos nuevamente.")
-            engine.runAndWait()
-            return mic_rec(inicio=False)
+            lap_speak("No entendí lo que dices, por favor, repítelo.")
+            return microfono()
+
+#función para que la computadora hable
+def lap_speak(texto):
+    print(f'TRIPTY: {texto}\n')
+    engine.say(texto)
+    engine.runAndWait()
+    return True
+
+#función para escuchar reconocer desde el micrófono la lista de ciudades
+def inicio():
+    lap_speak('Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.')
+    lap_speak('Para empezar dime algunas ciudades que conoces:')
+
+    text = microfono()
+    print("USUARIO: {}\n".format(text.capitalize()))
+        
+    time.sleep(2)
+    lap_speak("Ya lo tengo. Voy a buscar otros viajeros similares a ti y te recomendaré nuevas ciudades para que vayas. Espera unos segundos.")
+    return text
 
 #limpieza de datos
 def clean_city_input(text):
@@ -62,8 +76,6 @@ def clean_city_input(text):
 
 #función para generar el match de las ciudades en una sola ejecución
 def find_best_match(misspelled, uso='inicio'):
-    #llamamos el csv con los datos
-    cities_lst = pd.read_csv('../data/cities_for_user_input.csv')
     lista = [x.lower() for x in list(cities_lst["City"])]
         
     #lista con las ciudades finales
@@ -77,20 +89,12 @@ def find_best_match(misspelled, uso='inicio'):
             input_user.append(city_country)
     #print(input_user)
     if uso == 'inicio':
-        print(f"TRIPTY: Veo que te gusta viajar! Encontré {len(input_user)} ciudades en el texto que me dijiste. Vamos con las recomendaciones!\n")
-        engine.say(f"Veo que te gusta viajar! Encontré {len(input_user)} ciudades en el texto que me dijiste. Vamos con las recomendaciones!")
-        engine.runAndWait()
+        lap_speak(f"Veo que te gusta viajar! Encontré {len(input_user)} ciudades en el texto que me dijiste. Vamos con las recomendaciones!")
     return input_user
 
 #función para generar las recomendaciones en una sola ejecución
 def reco_cities(new_user_lst):
-    #print('Cargando datos de otros viajeros...')
-    print(f"TRIPTY: Estoy buscando algunos viajeros similares a ti... Veamos que otras ciudades les gusta.\n")
-    engine.say(f"Estoy buscando algunos viajeros similares a ti... Veamos que otras ciudades les gusta.")
-    engine.runAndWait()
-
-    #importamos csv de viajeros y las ciudades visitadas escrapeado de Nomad list
-    users = pd.read_csv('../data/user_cities.csv')
+    lap_speak(f"Estoy buscando algunos viajeros similares a ti... Veamos que otras ciudades les gusta.")
 
     #creamos una pivot table en donde pongamos todas las ciudades frente a todos los usuarios
     cities_users = pd.pivot_table(users,
@@ -128,9 +132,8 @@ def reco_cities(new_user_lst):
                 final_rec.append(i)
         count += 1
         
-    print(f"TRIPTY: Estas son las 10 ciudades más recomendadas para que conozcas:\n")
-    engine.say(f"Estas son las 10 ciudades más recomendadas para que conozcas, espero que me lleves contigo.")
-    engine.runAndWait()
+    lap_speak(f"Estas son las 10 ciudades más recomendadas para que conozcas:")
+
     for i,e in enumerate(final_rec[:10]):
         print(f'                   {i+1}. {e}')
         time.sleep(0.5)
@@ -181,12 +184,7 @@ def crop_image(url,name):
 
 #función para generar mapa con las ciudades recomendadas
 def mapa_reco(lst):
-    print(f"TRIPTY: Voy a poner estas ciudades en un mapa para que las puedas ver mejor:")
-    engine.say(f"Voy a poner estas ciudades en un mapa para que las puedas ver mejor:")
-    engine.runAndWait()
-
-    #cargamos la tabla con todas las ciudades
-    cities = pd.read_csv('../data/nomadlist_cities.csv')
+    lap_speak("Voy a poner estas ciudades en un mapa para que las puedas ver mejor:")
 
     #generamos data frame con las ciudades recomendadas
     reco_cities = cities[cities['City-Country'].isin(lst)].reset_index(drop=True)
@@ -200,7 +198,6 @@ def mapa_reco(lst):
 
     #generamos mapa
     mapa = folium.Map(location=[ave_lat, ave_lon], zoom_start=1.5)
-
 
     #pintamos las imagenes en los marcadores de cada ciudad
     for i in range(len(reco_cities)):
@@ -223,76 +220,51 @@ def mapa_reco(lst):
 
 #funcion para definir el comienzo de una ruta
 def definir_start():
-        print('TRIPTY: ¿En qué ciudad quieres comenzar? Puedes seleccionar una de las ciudades que te recomendé u otra.\n')
-        engine.say("¿En qué ciudad quieres comenzar? Puedes seleccionar una de las ciudades que te recomendé u otra.")
-        engine.runAndWait()
+        lap_speak('¿En qué ciudad quieres comenzar? Puedes seleccionar una de las ciudades que te recomendé u otra.')
 
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-            print('-')
-            audio = r.listen(source)
-            try:
-                text = r.recognize_google(audio, language="es-en")
-                print("USUARIO: {}\n".format(text.capitalize()))
-                clean_input = clean_city_input(text)
-                start = find_best_match(clean_input, uso='otro')
-                #time.sleep(2)
-                print(f"TRIPTY: {start[0]} es una buena elección.\n")
-                engine.say(f"{start[0]} es una buena elección.")
-                engine.runAndWait()
-                return start[0]
-            except:
-                print("TRIPTY: No entendí lo que dices, comencemos nuevamente.\n")
-                engine.say("No entendí lo que dices, comencemos nuevamente.")
-                engine.runAndWait()
-                return definir_start()
+        text = microfono()
+        print("USUARIO: {}\n".format(text.capitalize()))
+
+        clean_input = clean_city_input(text)
+        start = find_best_match(clean_input, uso='otro')
+
+        try:
+            lap_speak(f"{start[0]} es una buena elección.")
+            return start[0]
+        except:
+            lap_speak(f"No logré identificar esa ciudad, intentemos otra vez.")
+            return definir_start()
+
+        
     
 #funcion para definir la duración del viaje
 def definir_tiempo():
-        print('TRIPTY: ¿Alrededor de cuántos días quieres que dure tu viaje? Yo te recomiendo que sea de 20 a 30 días.\n')
-        engine.say("¿Alrededor de cuántos días quieres que dure tu viaje? Yo te recomiendo que sea de 20 a 30 días.")
-        engine.runAndWait()
+    lap_speak('¿Alrededor de cuántos días quieres que dure tu viaje? Yo te recomiendo que sea de 20 a 30 días.')
 
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-            print('-')
-            audio = r.listen(source)
-            try:
-                text = r.recognize_google(audio, language="es-en")
-                print("USUARIO: {}\n".format(text.capitalize()))
-                dias = re.findall('\d+',text)
-                dia_final = int(dias[0])
-                if dia_final<=15:
-                    print(f"TRIPTY: {dia_final} son pocos días, será un tour rápido.\n")
-                    engine.say(f"{dia_final} son pocos días, será un tour rápido.")
-                    engine.runAndWait()
-                elif dia_final<=30:
-                    print(f"TRIPTY: {dia_final} días están bien para conocer.\n")
-                    engine.say(f"{dia_final} días están bien para conocer.")
-                    engine.runAndWait()
-                else:
-                    print(f"TRIPTY: {dia_final} son bastantes días, va a ser un buen viaje.\n")
-                    engine.say(f"{dia_final} son bastantes días, va a ser un buen viaje.")
-                    engine.runAndWait()
-                return dia_final
-            except:
-                print("TRIPTY: No entendí lo que dices, comencemos nuevamente.\n")
-                engine.say("No entendí lo que dices, comencemos nuevamente.")
-                engine.runAndWait()
-                return definir_tiempo()
+    text = microfono()
+    print("USUARIO: {}\n".format(text.capitalize()))
+    dias = re.findall('\d+',text)
+
+    try:
+        dia_final = int(dias[0])
+        if dia_final<=15:
+            lap_speak(f"{dia_final} son pocos días, será un tour rápido.")
+        elif dia_final<=30:
+            lap_speak(f"{dia_final} días están bien para conocer.")
+        else:
+            lap_speak(f"En {dia_final} puedes conocer mucho, excelente.")
+        return dia_final
+
+    except:
+        lap_speak("No logré identificar ese número de días, intentemos otra vez.")
+        return definir_tiempo()
 
 #función para generar la ruta recomendada
 def ruta_recomendada():
-    print('TRIPTY: Ahora te voy a recomendar un tour de algunas ciudades.\n')
-    engine.say("Ahora te voy a recomendar un tour de algunas ciudades.")
-    engine.runAndWait()
+    lap_speak('Ahora te voy a recomendar un tour de algunas ciudades.')
 
     start = definir_start()
     wanted_days = definir_tiempo()
-    #print(wanted_days, type(wanted_days))
-    
-    #cargamos la tabla con todas las ciudades
-    cities = pd.read_csv('../data/nomadlist_cities.csv')
 
     #creamos el dataframe con la ciudad de inicio
     ruta = cities[cities['City-Country']==start].reset_index(drop=True)
@@ -300,9 +272,7 @@ def ruta_recomendada():
     indice = 0
     days = 0
 
-    print('TRIPTY: Estoy procesando todos los datos. ¡Será una excelente ruta!\n')
-    engine.say("Estoy procesando todos los datos. ¡Será una excelente ruta!")
-    engine.runAndWait()
+    lap_speak('Estoy procesando todos los datos. ¡Será una excelente ruta!')
 
     #agregamos las proximas ciudades
     while days<wanted_days:
@@ -345,22 +315,16 @@ def ruta_recomendada():
                                 anexado = True
                                 break
             if anexado==False:
-                print(f'TRIPTY: No tengo suficientes ciudades cerca de {start} para el número de días que quieres, pero te voy a hacer una propuesta.\n')
-                engine.say(f'No tengo suficientes ciudades cerca de {start} para el número de días que quieres, pero te voy a hacer una propuesta.')
-                engine.runAndWait()
+                lap_speak(f'No tengo suficientes ciudades cerca de {start} para el número de días que quieres, pero te voy a hacer una propuesta.')
                 break
         indice+=1
         days = int(sum(list(ruta['Average days'])))
         ruta['Presupuesto'] = ruta['Average days']*ruta['Cost/day (USD)']
         presupuesto = int(sum(list(ruta['Presupuesto'])))
 
-    print(f'TRIPTY: Ya tengo tu viaje listo, según información de otros usuarios, lo recomendable es que sea de {days} días. Podrás conocer {len(ruta)} ciudades en ese tiempo y el presupuesto aproximado es de ${presupuesto} dólares.\n')
-    engine.say(f'Ya tengo tu viaje listo, según información de otros usuarios, lo recomendable es que sea de {days} días. Podrás conocer {len(ruta)} ciudades en ese tiempo y el presupuesto aproximado es de {presupuesto} dólares.')
-    engine.runAndWait()
+    lap_speak(f'Ya tengo tu viaje listo, según información de otros usuarios, lo recomendable es que sea de {days} días. Podrás conocer {len(ruta)} ciudades en ese tiempo y el presupuesto aproximado es de ${presupuesto}.')
 
-    print(f'TRIPTY: Aquí está el itinerario completo que yo te recomiendo:\n')
-    engine.say(f'Aquí está el itinerario completo que yo te recomiendo:')
-    engine.runAndWait()
+    lap_speak(f'Aquí está el itinerario completo que yo te recomiendo:')
 
     dias = 1
     for i in range(len(ruta)):
@@ -371,14 +335,9 @@ def ruta_recomendada():
     return ruta
 
 #funcion para generar mapa de la ruta
-def mapa_ruta(df):
-    print(f"TRIPTY: Enseguida voy a poner la ruta en un mapa para que la puedas ver mejor. Me tardaré un poco, son varias ciudades.")
-    engine.say(f"Enseguida voy a poner la ruta en un mapa para que la puedas ver mejor. Me tardaré un poco, son varias ciudades.")
-    engine.runAndWait()
-
-    #cargamos la tabla con todas las ciudades
-    cities = pd.read_csv('../data/nomadlist_cities.csv')
-    
+def mapa_ruta(df=ruta_prueba):
+    lap_speak(f"Enseguida voy a poner la ruta en un mapa para que la puedas ver mejor. Me tardaré un poco, son varias ciudades.")
+  
     points = []
     for i in range(len(df)):
         points.append(tuple([df.loc[i,"lat"],df.loc[i,"lng"]]))
@@ -388,7 +347,6 @@ def mapa_ruta(df):
 
     #generamos mapa
     mapa = folium.Map(location=[ave_lat, ave_lon], zoom_start=4)
-
 
     #pintamos las imagenes en los marcadores de cada ciudad
     for i in range(len(df)):
@@ -412,10 +370,8 @@ def mapa_ruta(df):
     return mapa
 
 #función para graficar las temperaturas promedio
-def temp_graph(ruta):
-    print('TRIPTY: Te voy a mostrar la temperatura promedio de estás ciudades por mes. Así podras definir la fecha del viaje.')
-    engine.say("Te voy a mostrar la temperatura promedio de estás ciudades por mes. Así podras definir la fecha del viaje.")
-    engine.runAndWait()
+def temp_graph(ruta=ruta_prueba):
+    lap_speak('Te voy a mostrar la temperatura promedio de estás ciudades por mes. Así podras definir la fecha del viaje.')
     
     #sacamos las columnas de temperatura del df
     temp_cols = [i for i in ruta.columns if i.startswith('Temp')]
@@ -459,17 +415,13 @@ def temp_graph(ruta):
     temp_min = (meses[new_cols.index(mini.index[0])],round(mini['Average Temp (°C)'].values[0],2))
     
     time.sleep(2)
-    print(f'TRIPTY: El mes más frio es {temp_min[0]}, su promedio es {temp_min[1]} grados Celsius y el más caluroso es {temp_max[0]} con {temp_max[1]} grados Celsius.\n')
-    engine.say(f'El mes más frio es {temp_min[0]}, su promedio es {temp_min[1]} grados Celsius y el más caluroso es {temp_max[0]} con {temp_max[1]} grados Celsius.')
-    engine.runAndWait()
-    
+    lap_speak(f'El mes más frio es {temp_min[0]}, su promedio es {temp_min[1]} grados Celsius y el más caluroso es {temp_max[0]} con {temp_max[1]} grados Celsius.')
+
     return True
 
 #función para graficar las variables extras
-def extra_graph(ruta):
-    print('TRIPTY: Para terminar, mira este gráfico con 20 variables para que puedas evaluar mejor la ruta. Vienen algunas como, qué tan caminables o seguras son las ciudades de la ruta.')
-    engine.say("Para terminar, mira este gráfico con 20 variables para que puedas evaluar mejor la ruta. Vienen algunas como, qué tan caminables o seguras son las ciudades de la ruta.")
-    engine.runAndWait()
+def extra_graph(ruta=ruta_prueba):
+    lap_speak('Para terminar, mira este gráfico con 20 variables para que puedas evaluar mejor la ruta. Vienen algunas como, qué tan caminables o seguras son las ciudades de la ruta.')
     
     new_cols = ['Overall Score', 'Quality of life score','Family score','Fun', 'Safety', 
            'Education level', 'English speaking', 'Walkability', 'Peace', 'Traffic safety',
@@ -506,46 +458,37 @@ def extra_graph(ruta):
     fig.show()
     
     time.sleep(3)
-    
-    print('TRIPTY: Espero que ya tengas todos los factores necesarios para evaluar la ruta y comprar tus vuelos.\n')
-    engine.say("Espero que ya tengas todos los factores necesarios para evaluar la ruta y comprar tus vuelos.")
-    engine.runAndWait()
+    lap_speak('Espero que ya tengas todos los factores necesarios para evaluar la ruta y comprar tus vuelos.')
     
     #imagen de cierre
     imagen = '<center><img src="../Images/cierre.jpg" width="240" height="240" align="center"/></center>'
     display(HTML(imagen))
     
-    print('TRIPTY: ¡Buen viaje! Estoy lista para ayudarte cuando tengas tu siguiente aventura. Bye Bye\n')
-    engine.say("¡Buen viaje! Estoy lista para ayudarte cuando tengas tu siguiente aventura. Bye Bye")
-    engine.runAndWait()
+    lap_speak('¡Buen viaje! Estoy lista para ayudarte cuando tengas tu siguiente aventura. Bye Bye.')
     
     return True
 
 #función para despertar a TRIPTY
 def despertar_tripty():
-    time.sleep(2)
-    print('TRIPTY: Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir DESPIERTA TRIPTY para que continuemos.\n')
-    engine.say("Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir: 'DESPIERTA TRIPTY' para que continuemos.")
-    engine.runAndWait()
+    lap_speak('Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir DESPIERTA TRIPTY para que continuemos.')
 
     texto = []
+    r = sr.Recognizer()
     while 'despierta' not in texto:
-        r = sr.Recognizer()
         with sr.Microphone() as source:
-            audio = r.listen(source)
+            #r.adjust_for_ambient_noise(source)
             try:
+                audio = r.listen(source, phrase_time_limit=3,timeout=2)
                 text = r.recognize_google(audio, language="es-en")
+                print(text, file=terminal_output)
                 texto = clean_city_input(text)
-                print(texto)
             except:
                 pass
-    print('TRIPTY: Ya desperté, fue una buena siesta...\n')
-    engine.say("Ya desperté, fue una buena siesta...")
-    engine.runAndWait()
+    lap_speak('Ya desperté, fue una buena siesta...')
     return 'Tripty despierta'
 
 def tripty():
-    user_input = mic_rec()
+    user_input = inicio()
     clean_input = clean_city_input(user_input)
     cities_input = find_best_match(clean_input)
     recomendaciones = reco_cities(cities_input)
@@ -553,8 +496,8 @@ def tripty():
     display(recomendados_mapa)
     siesta = despertar_tripty()
     ruta = ruta_recomendada()
-    ruta_mapa = mapa_ruta(ruta)
+    ruta_mapa = mapa_ruta(df=ruta)
     display(ruta_mapa)
-    grafico_temp = temp_graph(ruta)
-    cierre = extra_graph(ruta)
+    grafico_temp = temp_graph(ruta=ruta)
+    cierre = extra_graph(ruta=ruta)
     return '¡Buen viaje!'
