@@ -31,19 +31,22 @@ cities_lst = pd.read_csv('../data/cities_for_user_input.csv') #ciudades con dife
 users = pd.read_csv('../data/user_cities.csv') #csv de viajeros y las ciudades visitadas escrapeado de Nomad list
 cities = pd.read_csv('../data/nomadlist_cities.csv') #tabla con todas las ciudades
 ruta_prueba = pd.read_csv('../data/ruta_ejemplo.csv') #cargamos una ruta de prueba
+rec = ['Queretaro, Mexico', 'Guadalajara, Mexico', 'Bangkok, Thailand', 'Hanoi, Vietnam', 'Mexico City, Mexico', 'Puerto Vallarta, Mexico', 'Chiang Mai, Thailand', 'Chiang Rai, Thailand'] #ejemplo de ciudades recomendadas
+
 
 #cargando archivos
 with open('stopwords_es.txt', 'r') as f:
     sw = [line.strip() for line in f]
 
 #función de micrófono
-def microfono():
+def microfono(limite=15):
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source)
         try:
             print('Escuchando...')
-            audio = r.listen(source, phrase_time_limit=15, timeout=2)
+            audio = r.listen(source, phrase_time_limit=limite, timeout=2)
             text = r.recognize_google(audio, language="es-en")
+            print("USUARIO: {}\n".format(text.capitalize()))
             return text
         except:
             lap_speak("No entendí lo que dices, por favor, repítelo.")
@@ -60,12 +63,10 @@ def lap_speak(texto):
 def inicio():
     lap_speak('Hola, soy Tripty y voy a ayudarte a planear tu próximo viaje.')
     lap_speak('Para empezar dime algunas ciudades que conoces:')
-
+    
     text = microfono()
-    print("USUARIO: {}\n".format(text.capitalize()))
-        
-    time.sleep(2)
-    lap_speak("Ya lo tengo. Voy a buscar otros viajeros similares a ti y te recomendaré nuevas ciudades para que vayas. Espera unos segundos.")
+
+    lap_speak("Ya lo tengo. Voy a procesar tu texto. Espera unos segundos.")
     return text
 
 #limpieza de datos
@@ -94,7 +95,7 @@ def find_best_match(misspelled, uso='inicio'):
 
 #función para generar las recomendaciones en una sola ejecución
 def reco_cities(new_user_lst):
-    lap_speak(f"Estoy buscando algunos viajeros similares a ti... Veamos que otras ciudades les gusta.")
+    lap_speak(f"Estoy buscando algunos viajeros similares a ti... Veamos que otras ciudades conocen para poder recomendarte.")
 
     #creamos una pivot table en donde pongamos todas las ciudades frente a todos los usuarios
     cities_users = pd.pivot_table(users,
@@ -105,8 +106,6 @@ def reco_cities(new_user_lst):
     #vamos a reemplazar los valores de días con 1 y 0 si es que fue o no algún lugar 
     for i in cities_users.columns:
         cities_users.loc[cities_users[i]>0,i]=1
-    
-    #print('Verificando viajeros similares...')
     
     #ingresa ciudades de nuevo usuario y creamos su data frame
     new_user = pd.DataFrame(index=set(new_user_lst))
@@ -120,7 +119,6 @@ def reco_cities(new_user_lst):
     distances = pd.DataFrame(1/(1 + squareform(pdist(cities_users.T, 'jaccard'))), 
                              index=cities_users.columns, columns=cities_users.columns)
     
-    #print('Generando recomendaciones...')
     #generamos las recomendaciones para el usuario
     final_rec = []
     count = 1
@@ -142,7 +140,7 @@ def reco_cities(new_user_lst):
 
 #función para recortar imagenes para mapa de folium
 def crop_image(url,name):
-    #llamamos elurl de la imagen
+    #llamamos el url de la imagen
     response = requests.get(url)
     im = Image.open(BytesIO(response.content))
     width, height = im.size   # Get dimensions
@@ -183,7 +181,7 @@ def crop_image(url,name):
     return path
 
 #función para generar mapa con las ciudades recomendadas
-def mapa_reco(lst):
+def mapa_reco(lst=rec):
     lap_speak("Voy a poner estas ciudades en un mapa para que las puedas ver mejor:")
 
     #generamos data frame con las ciudades recomendadas
@@ -197,7 +195,7 @@ def mapa_reco(lst):
     ave_lon = sum(p[1] for p in points)/len(points)
 
     #generamos mapa
-    mapa = folium.Map(location=[ave_lat, ave_lon], zoom_start=1.5)
+    mapa = folium.Map(width=800,height=400, location=[ave_lat, ave_lon], zoom_start=1.5)
 
     #pintamos las imagenes en los marcadores de cada ciudad
     for i in range(len(reco_cities)):
@@ -215,15 +213,14 @@ def mapa_reco(lst):
                       icon=icon,
                       tooltip = reco_cities.loc[i,'City-Country'],
                       popup = f"Travelers City Score: {reco_cities.loc[i,'Overall Score']}/5").add_to(mapa)
-
-    return mapa
+    display(mapa)
+    return True
 
 #funcion para definir el comienzo de una ruta
 def definir_start():
         lap_speak('¿En qué ciudad quieres comenzar? Puedes seleccionar una de las ciudades que te recomendé u otra.')
 
-        text = microfono()
-        print("USUARIO: {}\n".format(text.capitalize()))
+        text = microfono(limite=5)
 
         clean_input = clean_city_input(text)
         start = find_best_match(clean_input, uso='otro')
@@ -241,8 +238,7 @@ def definir_start():
 def definir_tiempo():
     lap_speak('¿Alrededor de cuántos días quieres que dure tu viaje? Yo te recomiendo que sea de 20 a 30 días.')
 
-    text = microfono()
-    print("USUARIO: {}\n".format(text.capitalize()))
+    text = microfono(limite=5)
     dias = re.findall('\d+',text)
 
     try:
@@ -328,10 +324,10 @@ def ruta_recomendada():
 
     dias = 1
     for i in range(len(ruta)):
-        print(f"Día {int(dias)}:   {ruta.loc[i,'City-Country']}")
+        print(f"                   Día {int(dias)}:   {ruta.loc[i,'City-Country']}")
         dias += ruta.loc[i,'Average days']
         time.sleep(0.5)
-    print(f"Día {int(dias)-1}:   Fin del viaje :(\n")
+    print(f"                   Día {int(dias)-1}:   Fin del viaje :(\n")
     return ruta
 
 #funcion para generar mapa de la ruta
@@ -346,7 +342,7 @@ def mapa_ruta(df=ruta_prueba):
     ave_lon = sum(p[1] for p in points)/len(points)
 
     #generamos mapa
-    mapa = folium.Map(location=[ave_lat, ave_lon], zoom_start=4)
+    mapa = folium.Map(width=800,height=400,location=[ave_lat, ave_lon], zoom_start=4)
 
     #pintamos las imagenes en los marcadores de cada ciudad
     for i in range(len(df)):
@@ -366,12 +362,13 @@ def mapa_ruta(df=ruta_prueba):
                       popup = f"Travelers City Score: {df.loc[i,'Overall Score']}/5").add_to(mapa)
     #fadd lines
     folium.PolyLine(points, color="blue", weight=2.5, opacity=1).add_to(mapa)
-    
-    return mapa
+
+    display(mapa)
+    return True
 
 #función para graficar las temperaturas promedio
 def temp_graph(ruta=ruta_prueba):
-    lap_speak('Te voy a mostrar la temperatura promedio de estás ciudades por mes. Así podras definir la fecha del viaje.')
+    lap_speak('Te voy a mostrar la temperatura promedio de esta ruta por mes. Así podras definir la fecha del viaje.')
     
     #sacamos las columnas de temperatura del df
     temp_cols = [i for i in ruta.columns if i.startswith('Temp')]
@@ -421,8 +418,8 @@ def temp_graph(ruta=ruta_prueba):
 
 #función para graficar las variables extras
 def extra_graph(ruta=ruta_prueba):
-    lap_speak('Para terminar, mira este gráfico con 20 variables para que puedas evaluar mejor la ruta. Vienen algunas como, qué tan caminables o seguras son las ciudades de la ruta.')
-    
+    lap_speak('Para terminar, mira este gráfico con 20 variables para que puedas evaluar mejor la ruta y comprar tus vuelos. Vienen algunas como, qué tan caminables o seguras son las ciudades de la ruta.')
+
     new_cols = ['Overall Score', 'Quality of life score','Family score','Fun', 'Safety', 
            'Education level', 'English speaking', 'Walkability', 'Peace', 'Traffic safety',
            'Hospitals', 'Happiness', 'Nightlife', 'Free WiFi in city', 'Places to work from',
@@ -446,7 +443,7 @@ def extra_graph(ruta=ruta_prueba):
     #configuramos el título y labels del gráfico
     fig.update_layout(
         title={
-            'text': "Puntaje de la ruta (20 variables)",
+            'text': "Puntaje de la ruta",
             'y':0.88,
             'x':0.5,
             'xanchor': 'center',
@@ -456,48 +453,55 @@ def extra_graph(ruta=ruta_prueba):
 
     #retornamos el gráfico
     fig.show()
-    
-    time.sleep(3)
-    lap_speak('Espero que ya tengas todos los factores necesarios para evaluar la ruta y comprar tus vuelos.')
-    
+
+    lap_speak('¡Buen viaje! Estoy lista para ayudarte cuando tengas tu siguiente aventura. Bye Bye.')
+
     #imagen de cierre
     imagen = '<center><img src="../Images/cierre.jpg" width="240" height="240" align="center"/></center>'
     display(HTML(imagen))
-    
-    lap_speak('¡Buen viaje! Estoy lista para ayudarte cuando tengas tu siguiente aventura. Bye Bye.')
-    
+
     return True
 
 #función para despertar a TRIPTY
-def despertar_tripty():
-    lap_speak('Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir DESPIERTA TRIPTY para que continuemos.')
+def continuar(palabra):
+
+    if palabra == 'despierta':
+        palabra = 'despier'
+        lap_speak('Voy a dormir un momento para que puedas seguir contando de tu proyecto al público. En cualquier momento puedes decir DESPIERTA TRIPTY para que continuemos.')
+        salida = 'Ya desperté, fue una buena siesta...'
+    elif palabra == 'continuar':
+        palabra = 'conti'
+        lap_speak('Di continuar cuando quieras que sigamos...')
+        salida = 'Vamos a continuar...'
 
     texto = []
+    text = ''
     r = sr.Recognizer()
-    while 'despierta' not in texto:
-        with sr.Microphone() as source:
-            #r.adjust_for_ambient_noise(source)
+    with sr.Microphone() as source:
+        #r.adjust_for_ambient_noise(source)
+        while palabra not in text.lower():
             try:
-                audio = r.listen(source, phrase_time_limit=3,timeout=2)
+                audio = r.listen(source, phrase_time_limit=2,timeout=1)
                 text = r.recognize_google(audio, language="es-en")
                 print(text, file=terminal_output)
-                texto = clean_city_input(text)
             except:
                 pass
-    lap_speak('Ya desperté, fue una buena siesta...')
-    return 'Tripty despierta'
 
+    lap_speak(salida)
+    return 'Continuar'
+
+#función principal
 def tripty():
     user_input = inicio()
     clean_input = clean_city_input(user_input)
     cities_input = find_best_match(clean_input)
     recomendaciones = reco_cities(cities_input)
-    recomendados_mapa = mapa_reco(recomendaciones)
-    display(recomendados_mapa)
-    siesta = despertar_tripty()
+    recomendados_mapa = mapa_reco(lst=recomendaciones)
+    siesta = continuar('despierta')
     ruta = ruta_recomendada()
     ruta_mapa = mapa_ruta(df=ruta)
-    display(ruta_mapa)
+    espera = continuar('continuar')
     grafico_temp = temp_graph(ruta=ruta)
+    espera = continuar('continuar')
     cierre = extra_graph(ruta=ruta)
     return '¡Buen viaje!'
